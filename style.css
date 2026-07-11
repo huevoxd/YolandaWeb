@@ -1,20 +1,104 @@
-body {
-    background-color: #f0f2f5;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding-top: 50px;
-}
+:root{
+    --ink:#00040b;
+    --muted:#334155;
+    --line:#e2e8f0;
+    --paper:#ffffff;
+    --accent:#000000;
+    --accent-hover:#cbd5e1;
+    --heading-font:'Montserrat', sans-serif;
+    --body-font:'Inter', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--body-font);font-size:17px;line-height:1.65;
+  }
+  a{color:var(--ink);text-decoration:none;}
+  img{display:block;max-width:100%;}
+  h1,h2,h3,h4{font-family:var(--heading-font);font-weight:600;margin:0 0 .5em;}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 3em;}
+  @media(max-width:760px){ .wrap{padding:0 1.2em;} }
 
-h1 {
-    color: #333;
-}
+  /* placeholder de imagen: sustituye por tu propia foto/ilustración */
+  .img-placeholder{
+    background:repeating-linear-gradient(135deg,#eceff3,#eceff3 12px,#e2e8f0 12px,#e2e8f0 24px);
+    display:flex;align-items:center;justify-content:center;
+    color:#64748b;font-size:13px;font-family:var(--body-font);
+    text-align:center;padding:1em;
+  }
 
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+  /* ---------- Cabecera / logo ---------- */
+  .brand-row{padding:2.5em 0 1em;text-align:center;}
+  .brand-row a{display:inline-block;width:100%;max-width:420px;}
+  .brand-row .img-placeholder{aspect-ratio:1880/790;width:100%;font-size:15px;}
+
+  /* ---------- barra de contacto ---------- */
+  .contact-bar{padding:1em 0;text-align:center;font-size:15px;color:var(--muted);}
+  .contact-bar a{text-decoration:underline;text-underline-offset:2px;}
+
+  /* ---------- botones de categoría ---------- */
+  .category-row{padding:1em 0 2em;}
+  .category-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5em;}
+  @media(max-width:760px){ .category-grid{grid-template-columns:1fr;} }
+  .category-btn{
+    display:block;text-align:center;
+    padding:0;border:1px solid var(--line);border-radius:2px;overflow:hidden;
+    transition:transform .18s ease;
+  }
+  .category-btn:hover{transform:translateY(-3px);}
+  .category-btn .img-placeholder{aspect-ratio:4/3;}
+  .category-btn span{
+    display:block;padding:.9em 1em;font-family:var(--heading-font);
+    font-weight:600;font-size:14px;letter-spacing:.02em;background:var(--paper);
+  }
+
+  /* ---------- slider ---------- */
+  .slider{position:relative;overflow:hidden;background:#eceff3;}
+  .slider-track{display:flex;transition:transform .5s ease;}
+  .slide{
+    min-width:100%;aspect-ratio:16/7;
+    display:flex;align-items:flex-end;
+  }
+  @media(max-width:760px){ .slide{aspect-ratio:4/5;} }
+  .slide-caption{
+    padding:2em;color:var(--ink);font-family:var(--heading-font);font-weight:600;
+    font-size:20px;background:linear-gradient(0deg,rgba(255,255,255,.85),transparent);
+    width:100%;
+  }
+  .slider-nav{
+    position:absolute;top:50%;transform:translateY(-50%);
+    background:rgba(255,255,255,.85);border:none;width:42px;height:42px;
+    border-radius:50%;cursor:pointer;font-size:18px;
+  }
+  .slider-nav.prev{left:16px;} .slider-nav.next{right:16px;}
+  .slider-dots{display:flex;justify-content:center;gap:8px;padding:14px 0;}
+  .slider-dots button{width:8px;height:8px;border-radius:50%;border:none;background:var(--line);cursor:pointer;padding:0;}
+  .slider-dots button.active{background:var(--ink);}
+
+  /* ---------- heading intermedio ---------- */
+  .mid-heading{padding:4em 0;text-align:center;}
+  .mid-heading h4{font-size:24px;line-height:1.4;margin:0;}
+  .mid-heading b{font-weight:700;}
+
+  /* ---------- imagen decorativa ---------- */
+  .decor{padding:1em 0 3em;text-align:center;}
+  .decor .img-placeholder{width:220px;height:200px;margin:0 auto;border-radius:4px;}
+
+  /* ---------- footer: contacto + redes ---------- */
+  footer{padding:3em 0;text-align:center;border-top:1px solid var(--line);}
+  .footer-contact{font-size:16px;color:var(--muted);margin-bottom:1em;}
+  .footer-contact a{text-decoration:underline;text-underline-offset:2px;}
+  .social-row{display:flex;justify-content:center;gap:14px;}
+  .social-row a{
+    width:38px;height:38px;border-radius:50%;border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .social-row a:hover{background:var(--accent-hover);}
+  .social-row svg{width:17px;height:17px;}
+
+  /* ---------- banda de logos de clientes ---------- */
+  .logos-band{padding:2em 0 4em;}
+  .logos-band .img-placeholder{aspect-ratio:1556/558;width:100%;}
+
+  :focus-visible{outline:2px dotted var(--ink);outline-offset:2px;}
