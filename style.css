@@ -6,7 +6,7 @@
     --accent:#3a3a3a;
     --accent-hover:#e0e0e0;
     --heading-font:'Playfair Display', serif;
-    --nav-font:'Brush Script MT', cursive;
+    --nav-font:'Dancing Script', cursive;
     --body-font:'Work Sans', sans-serif;
   }
   *{box-sizing:border-box;}
@@ -38,6 +38,7 @@
 
   .logo{display:block;}
   .logo .img-placeholder{width:100px;aspect-ratio:1880/790;font-size:9px;}
+  .logo img{width:100px;height:auto;display:block;}
 
   .main-nav{flex:1;display:flex;justify-content:center;}
   .main-nav ul{display:flex;gap:5.5em;list-style:none;margin:0;padding:0;}
@@ -103,6 +104,36 @@
 
   /* ---------- footer: contacto + redes ---------- */
   footer{padding:3em 0;text-align:center;border-top:1px solid var(--line);}
+  .footer-avatar{
+    width:110px;height:110px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;background:var(--paper);border:1px solid var(--line);
+    margin:0 auto 1em;cursor:pointer;position:relative;z-index:2;
+    transition:width .35s ease,height .35s ease,border-radius .35s ease,top .35s ease,left .35s ease,transform .35s ease;
+  }
+  .footer-avatar img{
+    width:65%;height:65%;border-radius:50%;object-fit:cover;
+    transition:width .35s ease,height .35s ease,border-radius .35s ease,object-fit .35s ease;
+  }
+  .footer-avatar.is-expanded{
+    position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:min(92vw,720px);height:min(92vw,720px);
+    border-radius:8px;z-index:1000;cursor:zoom-out;
+  }
+  .footer-avatar.is-expanded img{
+    width:100%;height:100%;border-radius:8px;object-fit:contain;
+  }
+
+  .avatar-backdrop{
+    position:fixed;inset:0;background:rgba(0,0,0,.6);
+    opacity:0;pointer-events:none;z-index:999;
+    transition:opacity .35s ease;
+  }
+  .avatar-backdrop.is-visible{opacity:1;pointer-events:auto;}
+
+  @media(prefers-reduced-motion:reduce){
+    .footer-avatar,.footer-avatar img,.avatar-backdrop{transition:none;}
+  }
   .social-row{display:flex;justify-content:center;gap:14px;}
   .social-row a{
     width:38px;height:38px;border-radius:50%;border:1px solid var(--line);
