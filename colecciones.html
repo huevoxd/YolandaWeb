@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Inicio — [Tu Nombre / Estudio]</title>
-<meta name="description" content="Ilustrador/a científico/a y de la naturaleza. [Breve descripción de tu trabajo y a quién ayudas].">
+<title>Colecciones — Yolanda Ferrón</title>
+<meta name="description" content="Colecciones de ilustración de Yolanda Ferrón.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body class="no-scroll">
+<body>
 
   <!-- CABECERA -->
   <header class="site-header">
@@ -61,36 +61,28 @@
     </div>
   </header>
 
-  <!-- ILUSTRACIÓN ÚNICA + NAV INTEGRADO EN EL FONDO -->
-  <div class="hero-stack hero-stack--single">
-    <div class="hero-photo">
-      <img class="hero-photo-base" id="heroPhotoBase" src="ilustraciones/fondo 3.jpg" alt="Ilustración de fondo">
-      <img class="hero-photo-color" id="heroPhotoColor" src="ilustraciones/fondo 3.jpg" alt="">
+  <!-- COLECCIONES -->
+  <main class="collections">
+    <div class="wrap">
+      <h1>Colecciones</h1>
+      <ul class="collections-list">
+        <li>Paisaje</li>
+        <li>Animales no marinos</li>
+        <li>Bodegón</li>
+        <li>Carteles</li>
+        <li>Cuadernos de campo</li>
+        <li>Escultura</li>
+        <li>Especies peligrosas</li>
+        <li>Fauna marina</li>
+        <li>Ilustraciones científicas</li>
+        <li>Otros</li>
+        <li>Pintura</li>
+        <li>Tarjeta de visita</li>
+      </ul>
     </div>
-
-    <!-- CONTACTO + REDES SOCIALES, integrado en el fondo -->
-    <footer class="hero-footer">
-      <div class="wrap">
-        <div class="footer-avatar" id="footerAvatar" role="button" tabindex="0" aria-label="Ampliar imagen" aria-expanded="false">
-          <img src="ilustraciones/Página web/tarjeta visita/1000272095_da65266ea45e1a1eca62cc684cea600b-23_3_2026, 23_16_10.jpg" alt="">
-        </div>
-        <div class="avatar-backdrop" id="avatarBackdrop"></div>
-        <p class="footer-copyright">Copyright 2018 Yolanda Ferron. All Rights Reserved.</p>
-      </div>
-    </footer>
-  </div>
+  </main>
 
 <script>
-  const heroBackgrounds = [
-    'ilustraciones/fondo 3.jpg',
-    'ilustraciones/fondo 4.jpg'
-  ];
-  const heroIndex = Number(sessionStorage.getItem('heroBgIndex') || 0) % heroBackgrounds.length;
-  sessionStorage.setItem('heroBgIndex', (heroIndex + 1) % heroBackgrounds.length);
-  const heroBg = heroBackgrounds[heroIndex];
-  document.getElementById('heroPhotoBase').src = heroBg;
-  document.getElementById('heroPhotoColor').src = heroBg;
-
   const menuToggle = document.getElementById('menuToggle');
   const mainNav = document.getElementById('mainNav');
   menuToggle.addEventListener('click', () => {
@@ -98,24 +90,6 @@
     menuToggle.classList.toggle('open', isOpen);
     menuToggle.setAttribute('aria-expanded', isOpen);
   });
-
-  const footerAvatar = document.getElementById('footerAvatar');
-  const avatarBackdrop = document.getElementById('avatarBackdrop');
-  function setAvatarExpanded(expand) {
-    footerAvatar.classList.toggle('is-expanded', expand);
-    avatarBackdrop.classList.toggle('is-visible', expand);
-    footerAvatar.setAttribute('aria-expanded', expand);
-  }
-  footerAvatar.addEventListener('click', () => {
-    setAvatarExpanded(!footerAvatar.classList.contains('is-expanded'));
-  });
-  footerAvatar.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      setAvatarExpanded(!footerAvatar.classList.contains('is-expanded'));
-    }
-  });
-  avatarBackdrop.addEventListener('click', () => setAvatarExpanded(false));
 </script>
 
 </body>
