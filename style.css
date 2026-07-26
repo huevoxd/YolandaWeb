@@ -15,6 +15,13 @@
     margin:0;background:var(--paper);color:var(--ink);
     font-family:var(--body-font);font-size:17px;line-height:1.65;
   }
+  body.no-scroll{
+    position:relative;height:100vh;overflow:hidden;
+  }
+  body.no-scroll .site-header{
+    position:absolute;top:0;left:0;right:0;z-index:10;background:transparent;
+  }
+  body.no-scroll .hero-stack{height:100vh;}
   a{color:var(--ink);text-decoration:none;}
   img{display:block;max-width:100%;}
   h1,h2,h3,h4{font-family:var(--heading-font);font-weight:400;margin:0 0 .5em;}
@@ -54,6 +61,17 @@
     transition:background .2s ease,color .2s ease;
   }
   .nav-cta:hover{background:var(--ink);color:var(--paper);}
+
+  /* nav junto al logo, en la esquina superior, sin figura de botón */
+  .header-nav{flex:none;display:flex;justify-content:flex-start;margin-left:1.6em;}
+  .header-nav ul{gap:3.4em;}
+  .header-nav a{
+    font-size:26px;display:inline-block;
+    padding:0;border:none;background:none;backdrop-filter:none;
+  }
+  .header-nav a:hover{color:var(--muted);background:none;}
+  .header-nav .nav-cta{border:none;background:none;padding:0;}
+  .header-nav .nav-cta:hover{background:none;color:var(--muted);}
 
   .header-social{display:flex;gap:.6em;margin-left:auto;}
   .header-social a{
@@ -102,6 +120,37 @@
   .hero-main--strong{
     filter:grayscale(1) brightness(1) contrast(1.8);opacity:.45;
   }
+  /* ilustración única: base en blanco/negro + parches de color solo en algunas algas */
+  .hero-photo{
+    position:absolute;inset:0;z-index:1;
+    overflow:hidden;
+  }
+  .hero-photo img{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;display:block;
+  }
+  .hero-photo-base{
+    filter:grayscale(1) brightness(1) contrast(1.8);opacity:.45;
+  }
+  .hero-photo-color{
+    filter:grayscale(0) saturate(1.9) contrast(1.4) brightness(1.05);opacity:.4;
+    -webkit-mask-image:
+      radial-gradient(circle at 14% 78%, #fff 0%, #fff 8%, transparent 17%),
+      radial-gradient(circle at 47% 84%, #fff 0%, #fff 8%, transparent 18%),
+      radial-gradient(circle at 82% 74%, #fff 0%, #fff 6%, transparent 14%);
+    mask-image:
+      radial-gradient(circle at 14% 78%, #fff 0%, #fff 8%, transparent 17%),
+      radial-gradient(circle at 47% 84%, #fff 0%, #fff 8%, transparent 18%),
+      radial-gradient(circle at 82% 74%, #fff 0%, #fff 6%, transparent 14%);
+  }
+
+  /* footer integrado en el fondo del hero, para caber en una sola pantalla */
+  .hero-footer{
+    position:absolute;left:0;right:0;bottom:0;z-index:3;
+    padding:1.2em 0 1.4em;border-top:none;
+  }
+  .hero-footer .footer-avatar{width:80px;height:80px;margin-bottom:.6em;border:1px solid #000;}
+  .hero-footer .footer-copyright{font-size:11px;color:#000;font-weight:600;}
 
   /* collage de fauna marina, a todo color, repartido por el fondo */
   .hero-creatures{
@@ -152,11 +201,11 @@
   }
   .footer-avatar.is-expanded{
     position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
-    width:min(92vw,720px);height:min(92vw,720px);
+    width:min(92vw,900px);height:auto;aspect-ratio:1600/914;
     border-radius:8px;z-index:1000;cursor:zoom-out;
   }
   .footer-avatar.is-expanded img{
-    width:100%;height:100%;border-radius:8px;object-fit:contain;
+    width:100%;height:100%;border-radius:8px;object-fit:cover;
   }
 
   .avatar-backdrop{
