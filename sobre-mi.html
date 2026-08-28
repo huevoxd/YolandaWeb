@@ -7,45 +7,17 @@
 <meta name="description" content="Ilustradora científica y de la naturaleza. Conoce mi trabajo y mi camino como ilustradora.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=Dancing+Script:wght@600;700&family=Micro+5+Charted&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="about-page">
 
   <!-- CABECERA -->
   <header class="site-header">
     <div class="header-bottom-inner">
-      <button class="mobile-menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-
       <a class="logo" href="index.html">
-        <img src="ilustraciones/Página web/Logo Yolanda/logo yolanda mio.JPG" alt="Logo">
+        <img src="ilustraciones/Página web/Logo Yolanda/logo sin fondo.png" alt="Logo">
       </a>
-
-      <nav class="main-nav header-nav" id="mainNav">
-        <ul>
-          <li><a class="nav-cta" href="sobre-mi.html">Sobre mí</a></li>
-          <li class="has-dropdown">
-            <a href="colecciones.html">Colecciones</a>
-            <ul class="dropdown">
-              <li><a href="colecciones.html">Paisaje</a></li>
-              <li><a href="colecciones.html">Animales no marinos</a></li>
-              <li><a href="colecciones.html">Bodegón</a></li>
-              <li><a href="colecciones.html">Carteles</a></li>
-              <li><a href="colecciones.html">Cuadernos de campo</a></li>
-              <li><a href="colecciones.html">Escultura</a></li>
-              <li><a href="colecciones.html">Especies peligrosas</a></li>
-              <li><a href="colecciones.html">Fauna marina</a></li>
-              <li><a href="colecciones.html">Ilustraciones científicas</a></li>
-              <li><a href="colecciones.html">Otros</a></li>
-              <li><a href="colecciones.html">Pintura</a></li>
-              <li><a href="colecciones.html">Tarjeta de visita</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Tienda</a></li>
-        </ul>
-      </nav>
 
       <div class="header-social">
         <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
@@ -82,16 +54,6 @@
       </div>
     </div>
   </main>
-
-<script>
-  const menuToggle = document.getElementById('menuToggle');
-  const mainNav = document.getElementById('mainNav');
-  menuToggle.addEventListener('click', () => {
-    const isOpen = mainNav.classList.toggle('open');
-    menuToggle.classList.toggle('open', isOpen);
-    menuToggle.setAttribute('aria-expanded', isOpen);
-  });
-</script>
 
 </body>
 </html>

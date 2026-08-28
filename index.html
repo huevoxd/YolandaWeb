@@ -7,7 +7,7 @@
 <meta name="description" content="Ilustrador/a científico/a y de la naturaleza. [Breve descripción de tu trabajo y a quién ayudas].">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=Dancing+Script:wght@600;700&family=Micro+5+Charted&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="no-scroll">
@@ -15,37 +15,9 @@
   <!-- CABECERA -->
   <header class="site-header">
     <div class="header-bottom-inner">
-      <button class="mobile-menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-
       <a class="logo" href="index.html">
-        <img src="ilustraciones/Página web/Logo Yolanda/logo yolanda mio.JPG" alt="Logo">
+        <img src="ilustraciones/Página web/Logo Yolanda/logo sin fondo.png" alt="Logo">
       </a>
-
-      <nav class="main-nav header-nav" id="mainNav">
-        <ul>
-          <li><a class="nav-cta" href="sobre-mi.html">Sobre mí</a></li>
-          <li class="has-dropdown">
-            <a href="colecciones.html">Colecciones</a>
-            <ul class="dropdown">
-              <li><a href="colecciones.html">Paisaje</a></li>
-              <li><a href="colecciones.html">Animales no marinos</a></li>
-              <li><a href="colecciones.html">Bodegón</a></li>
-              <li><a href="colecciones.html">Carteles</a></li>
-              <li><a href="colecciones.html">Cuadernos de campo</a></li>
-              <li><a href="colecciones.html">Escultura</a></li>
-              <li><a href="colecciones.html">Especies peligrosas</a></li>
-              <li><a href="colecciones.html">Fauna marina</a></li>
-              <li><a href="colecciones.html">Ilustraciones científicas</a></li>
-              <li><a href="colecciones.html">Otros</a></li>
-              <li><a href="colecciones.html">Pintura</a></li>
-              <li><a href="colecciones.html">Tarjeta de visita</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Tienda</a></li>
-        </ul>
-      </nav>
 
       <div class="header-social">
         <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
@@ -61,11 +33,31 @@
     </div>
   </header>
 
-  <!-- ILUSTRACIÓN ÚNICA + NAV INTEGRADO EN EL FONDO -->
-  <div class="hero-stack hero-stack--single">
-    <div class="hero-photo">
-      <img class="hero-photo-base" id="heroPhotoBase" src="ilustraciones/fondo 3.jpg" alt="Ilustración de fondo">
-      <img class="hero-photo-color" id="heroPhotoColor" src="ilustraciones/fondo 3.jpg" alt="">
+  <!-- PORTADA DIVIDIDA EN 3: SOBRE MÍ / OBRAS / EVENTOS -->
+  <div class="hero-stack">
+    <div class="home-split">
+      <a class="home-col" href="sobre-mi.html" style="background-image:url('ilustraciones/Página web/WhatsApp Image 2026-03-02 at 00.36.45.jpg');">
+        <div class="home-col-inner">
+          <h2>Sobre mí</h2>
+          <p>Ilustradora científica y de la naturaleza. Conoce mi camino y mi forma de trabajar.</p>
+        </div>
+      </a>
+      <div class="home-col home-col--obras" id="obrasCol" style="background-image:url('ilustraciones/Página web/Paisaje/1.jpg');">
+        <button type="button" class="home-col-arrow home-col-arrow--prev" id="obrasPrev" aria-label="Obra anterior">‹</button>
+        <button type="button" class="home-col-arrow home-col-arrow--next" id="obrasNext" aria-label="Obra siguiente">›</button>
+        <a class="home-col-link" href="colecciones.html">
+          <div class="home-col-inner">
+            <h2>Obras</h2>
+            <p>Paisaje, fauna marina, cuadernos de campo y mucho más: explora mis colecciones.</p>
+          </div>
+        </a>
+      </div>
+      <div class="home-col home-col--placeholder">
+        <div class="home-col-inner">
+          <h2>Eventos</h2>
+          <p>Próximamente: talleres, exposiciones y ferias donde encontrarme.</p>
+        </div>
+      </div>
     </div>
 
     <!-- CONTACTO + REDES SOCIALES, integrado en el fondo -->
@@ -75,28 +67,51 @@
           <img src="ilustraciones/Página web/tarjeta visita/1000272095_da65266ea45e1a1eca62cc684cea600b-23_3_2026, 23_16_10.jpg" alt="">
         </div>
         <div class="avatar-backdrop" id="avatarBackdrop"></div>
-        <p class="footer-copyright">Copyright 2018 Yolanda Ferron. All Rights Reserved.</p>
+        <p class="footer-copyright">Copyright 2026 Yolanda Ferron. All Rights Reserved.</p>
       </div>
     </footer>
   </div>
 
 <script>
-  const heroBackgrounds = [
-    'ilustraciones/fondo 3.jpg',
-    'ilustraciones/fondo 4.jpg'
+  const obrasImages = [
+    'ilustraciones/Página web/Paisaje/1.jpg',
+    'ilustraciones/Página web/fauna marina/Amonite_Yolanda Ferron.jpg',
+    'ilustraciones/Página web/ilustraciones cientificas/Emiliania_Yolanda Ferrón.jpg',
+    'ilustraciones/Página web/fauna marina/Gamba_Yolanda Ferrón.jpg',
+    'ilustraciones/Página web/animales NO marinos/Araña.jpg',
+    'ilustraciones/Página web/ilustraciones cientificas/Zostera marina_Yolanda Ferron Horcas.JPG',
+    'ilustraciones/Página web/fauna marina/Nudibranquio_Yolanda Ferrón.jpg',
+    'ilustraciones/Página web/cuadernos de campo/conchas sket.jpg',
+    'ilustraciones/Página web/fauna marina/Tortuga Boba_Yolanda Ferrón.jpg',
+    'ilustraciones/Página web/ilustraciones cientificas/Zostera marina_2_Yolanda Ferron Horcas.JPG',
+    'ilustraciones/Página web/fauna marina/pulpo_color_.jpg'
   ];
-  const heroIndex = Number(sessionStorage.getItem('heroBgIndex') || 0) % heroBackgrounds.length;
-  sessionStorage.setItem('heroBgIndex', (heroIndex + 1) % heroBackgrounds.length);
-  const heroBg = heroBackgrounds[heroIndex];
-  document.getElementById('heroPhotoBase').src = heroBg;
-  document.getElementById('heroPhotoColor').src = heroBg;
-
-  const menuToggle = document.getElementById('menuToggle');
-  const mainNav = document.getElementById('mainNav');
-  menuToggle.addEventListener('click', () => {
-    const isOpen = mainNav.classList.toggle('open');
-    menuToggle.classList.toggle('open', isOpen);
-    menuToggle.setAttribute('aria-expanded', isOpen);
+  // estas ilustraciones se ven mejor un poco más pequeñas, sin recortar por "cover"
+  const obrasSmall = new Set([
+    'ilustraciones/Página web/fauna marina/Gamba_Yolanda Ferrón.jpg',
+    'ilustraciones/Página web/fauna marina/Amonite_Yolanda Ferron.jpg',
+    'ilustraciones/Página web/fauna marina/Nudibranquio_Yolanda Ferrón.jpg',
+    'ilustraciones/Página web/fauna marina/pulpo_color_.jpg',
+    'ilustraciones/Página web/cuadernos de campo/conchas sket.jpg',
+    'ilustraciones/Página web/fauna marina/Tortuga Boba_Yolanda Ferrón.jpg'
+  ]);
+  let obrasIndex = 0;
+  const obrasCol = document.getElementById('obrasCol');
+  function setObrasImage(i) {
+    obrasIndex = (i + obrasImages.length) % obrasImages.length;
+    const src = obrasImages[obrasIndex];
+    obrasCol.style.backgroundImage = `url('${src}')`;
+    obrasCol.classList.toggle('is-mini', obrasSmall.has(src));
+  }
+  document.getElementById('obrasPrev').addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setObrasImage(obrasIndex - 1);
+  });
+  document.getElementById('obrasNext').addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setObrasImage(obrasIndex + 1);
   });
 
   const footerAvatar = document.getElementById('footerAvatar');
