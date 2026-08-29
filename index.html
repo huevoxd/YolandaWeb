@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=Dancing+Script:wght@600;700&family=Micro+5+Charted&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body class="no-scroll">
+<body>
 
   <!-- CABECERA -->
   <header class="site-header">
@@ -26,82 +26,80 @@
         <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
         </a>
-        <a href="/cart" aria-label="Carrito de compra">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3h2.4l2.4 12.2a2 2 0 0 0 2 1.6h8.4a2 2 0 0 0 2-1.6L21.5 7H6"/></svg>
-        </a>
       </div>
     </div>
   </header>
 
-  <!-- PORTADA DIVIDIDA EN 3: SOBRE MÍ / OBRAS / EVENTOS -->
-  <div class="hero-stack">
-    <div class="home-split">
-      <a class="home-col" href="sobre-mi.html" style="background-image:url('ilustraciones/Página web/WhatsApp Image 2026-03-02 at 00.36.45.jpg');">
+  <!-- PORTADA EN FRANJAS HORIZONTALES: SOBRE MÍ / OBRAS / TALLERES+EVENTOS -->
+  <div class="home-split">
+    <a class="home-col" href="sobre-mi.html" style="background-image:url('ilustraciones/Página web/WhatsApp Image 2026-03-02 at 00.36.45.jpg');">
+      <div class="home-col-inner">
+        <h2>Sobre mí</h2>
+        <p>Ilustradora científica y de la naturaleza. Conoce mi camino y mi forma de trabajar.</p>
+      </div>
+    </a>
+    <div class="home-col home-col--obras" id="obrasCol" style="background-image:url('ilustraciones/Página web/animales NO marinos/Araña.jpg');">
+      <button type="button" class="home-col-arrow home-col-arrow--prev" id="obrasPrev" aria-label="Obra anterior">‹</button>
+      <button type="button" class="home-col-arrow home-col-arrow--next" id="obrasNext" aria-label="Obra siguiente">›</button>
+      <a class="home-col-link" href="colecciones.html">
         <div class="home-col-inner">
-          <h2>Sobre mí</h2>
-          <p>Ilustradora científica y de la naturaleza. Conoce mi camino y mi forma de trabajar.</p>
+          <h2>Obras</h2>
+          <p>Paisaje, fauna marina, cuadernos de campo y mucho más: explora mis colecciones.</p>
         </div>
       </a>
-      <div class="home-col home-col--obras" id="obrasCol" style="background-image:url('ilustraciones/Página web/Paisaje/1.jpg');">
-        <button type="button" class="home-col-arrow home-col-arrow--prev" id="obrasPrev" aria-label="Obra anterior">‹</button>
-        <button type="button" class="home-col-arrow home-col-arrow--next" id="obrasNext" aria-label="Obra siguiente">›</button>
-        <a class="home-col-link" href="colecciones.html">
-          <div class="home-col-inner">
-            <h2>Obras</h2>
-            <p>Paisaje, fauna marina, cuadernos de campo y mucho más: explora mis colecciones.</p>
-          </div>
+    </div>
+    <div class="home-col-split">
+      <a class="service-card service-card--talleres" href="#">
+        <h3>Talleres y cursos</h3>
+        <span class="service-card-btn">Ver más</span>
+      </a>
+      <a class="service-card service-card--eventos" href="#">
+        <h3>Eventos</h3>
+        <span class="service-card-btn">Ver más</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- CONTACTO + REDES SOCIALES -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-avatar" id="footerAvatar" role="button" tabindex="0" aria-label="Ampliar imagen" aria-expanded="false">
+        <img src="ilustraciones/Página web/tarjeta visita/1000272095_da65266ea45e1a1eca62cc684cea600b-23_3_2026, 23_16_10.jpg" alt="">
+      </div>
+      <div class="avatar-backdrop" id="avatarBackdrop"></div>
+      <div class="social-row">
+        <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 21v-8h3l.5-4H15V6.5A1.5 1.5 0 0 1 16.5 5H18V1.5A20 20 0 0 0 15.7 1.4 4.4 4.4 0 0 0 11 6v3H8v4h3v8z"/></svg>
+        </a>
+        <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
         </a>
       </div>
-      <div class="home-col home-col--placeholder">
-        <div class="home-col-inner">
-          <h2>Eventos</h2>
-          <p>Próximamente: talleres, exposiciones y ferias donde encontrarme.</p>
-        </div>
-      </div>
+      <p class="footer-copyright">Copyright 2026 Yolanda Ferron. All Rights Reserved.</p>
     </div>
-
-    <!-- CONTACTO + REDES SOCIALES, integrado en el fondo -->
-    <footer class="hero-footer">
-      <div class="wrap">
-        <div class="footer-avatar" id="footerAvatar" role="button" tabindex="0" aria-label="Ampliar imagen" aria-expanded="false">
-          <img src="ilustraciones/Página web/tarjeta visita/1000272095_da65266ea45e1a1eca62cc684cea600b-23_3_2026, 23_16_10.jpg" alt="">
-        </div>
-        <div class="avatar-backdrop" id="avatarBackdrop"></div>
-        <p class="footer-copyright">Copyright 2026 Yolanda Ferron. All Rights Reserved.</p>
-      </div>
-    </footer>
-  </div>
+  </footer>
 
 <script>
   const obrasImages = [
-    'ilustraciones/Página web/Paisaje/1.jpg',
-    'ilustraciones/Página web/fauna marina/Amonite_Yolanda Ferron.jpg',
-    'ilustraciones/Página web/ilustraciones cientificas/Emiliania_Yolanda Ferrón.jpg',
-    'ilustraciones/Página web/fauna marina/Gamba_Yolanda Ferrón.jpg',
     'ilustraciones/Página web/animales NO marinos/Araña.jpg',
+    'ilustraciones/Página web/Paisaje/1.jpg',
+    'ilustraciones/Página web/ilustraciones cientificas/Emiliania_Yolanda Ferrón.jpg',
     'ilustraciones/Página web/ilustraciones cientificas/Zostera marina_Yolanda Ferron Horcas.JPG',
-    'ilustraciones/Página web/fauna marina/Nudibranquio_Yolanda Ferrón.jpg',
-    'ilustraciones/Página web/cuadernos de campo/conchas sket.jpg',
-    'ilustraciones/Página web/fauna marina/Tortuga Boba_Yolanda Ferrón.jpg',
-    'ilustraciones/Página web/ilustraciones cientificas/Zostera marina_2_Yolanda Ferron Horcas.JPG',
-    'ilustraciones/Página web/fauna marina/pulpo_color_.jpg'
+    'ilustraciones/Página web/fauna marina/IMG_3485.JPG',
+    'ilustraciones/Página web/fauna marina/medusaa.jpg',
+    'ilustraciones/Página web/fauna marina/IMG_1904.JPG',
+    'ilustraciones/Página web/fauna marina/IMG_2863.JPG',
+    'ilustraciones/Página web/animales NO marinos/garra.jpg',
+    'ilustraciones/Página web/animales NO marinos/pato.jpg',
+    'ilustraciones/Página web/animales NO marinos/pa.jpg',
+    'ilustraciones/Página web/animales NO marinos/liberula.jpg',
+    'ilustraciones/Página web/animales NO marinos/flamenco.jpg'
   ];
-  // estas ilustraciones se ven mejor un poco más pequeñas, sin recortar por "cover"
-  const obrasSmall = new Set([
-    'ilustraciones/Página web/fauna marina/Gamba_Yolanda Ferrón.jpg',
-    'ilustraciones/Página web/fauna marina/Amonite_Yolanda Ferron.jpg',
-    'ilustraciones/Página web/fauna marina/Nudibranquio_Yolanda Ferrón.jpg',
-    'ilustraciones/Página web/fauna marina/pulpo_color_.jpg',
-    'ilustraciones/Página web/cuadernos de campo/conchas sket.jpg',
-    'ilustraciones/Página web/fauna marina/Tortuga Boba_Yolanda Ferrón.jpg'
-  ]);
   let obrasIndex = 0;
   const obrasCol = document.getElementById('obrasCol');
   function setObrasImage(i) {
     obrasIndex = (i + obrasImages.length) % obrasImages.length;
-    const src = obrasImages[obrasIndex];
-    obrasCol.style.backgroundImage = `url('${src}')`;
-    obrasCol.classList.toggle('is-mini', obrasSmall.has(src));
+    obrasCol.style.backgroundImage = `url('${obrasImages[obrasIndex]}')`;
   }
   document.getElementById('obrasPrev').addEventListener('click', (e) => {
     e.preventDefault();

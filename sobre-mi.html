@@ -26,9 +26,6 @@
         <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
         </a>
-        <a href="/cart" aria-label="Carrito de compra">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3h2.4l2.4 12.2a2 2 0 0 0 2 1.6h8.4a2 2 0 0 0 2-1.6L21.5 7H6"/></svg>
-        </a>
       </div>
     </div>
   </header>
@@ -52,8 +49,30 @@
           <img src="ilustraciones/Página web/WhatsApp Image 2026-03-02 at 00.36.45.jpg" alt="Retrato de Yolanda Ferrón">
         </div>
       </div>
+
+      <!-- CONTACTO -->
+      <div class="about-contact">
+        <h2>Contacto</h2>
+        <p>Déjame tu correo y tu teléfono y te responderé lo antes posible.</p>
+        <form class="contact-form" id="contactForm">
+          <input type="email" name="email" placeholder="Tu correo electrónico" required>
+          <input type="tel" name="telefono" placeholder="Tu teléfono">
+          <button type="submit">Enviar</button>
+        </form>
+        <p class="contact-thanks" id="contactThanks">¡Gracias! He recibido tus datos y te contactaré pronto.</p>
+      </div>
     </div>
   </main>
+
+<script>
+  const contactForm = document.getElementById('contactForm');
+  const contactThanks = document.getElementById('contactThanks');
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    contactForm.style.display = 'none';
+    contactThanks.classList.add('is-visible');
+  });
+</script>
 
 </body>
 </html>
