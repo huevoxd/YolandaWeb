@@ -6,7 +6,7 @@
     --accent:#3a3a3a;
     --accent-hover:#e0e0e0;
     --heading-font:'Playfair Display', serif;
-    --nav-font:'Dancing Script', cursive;
+    --nav-font:'Homemade Apple', cursive;
     --body-font:'Work Sans', sans-serif;
   }
   *{box-sizing:border-box;}
@@ -50,7 +50,7 @@
   .main-nav{flex:1;display:flex;justify-content:center;}
   .main-nav ul{display:flex;gap:5.5em;list-style:none;margin:0;padding:0;}
   .main-nav a{
-    font-family:var(--nav-font);font-weight:600;font-size:26px;
+    font-family:var(--nav-font);font-weight:400;font-size:26px;
     letter-spacing:.02em;
   }
   .main-nav a:hover{color:var(--muted);}
@@ -191,7 +191,9 @@
   }
 
   /* ---------- sobre mí ---------- */
-  .about-split{position:relative;display:flex;min-height:calc(100vh - 90px);}
+  body.about-page{position:relative;min-height:100vh;}
+  body.about-page .site-header{position:absolute;top:0;left:0;right:0;z-index:10;background:transparent;}
+  .about-split{position:relative;display:flex;min-height:100vh;}
   .about-split::before{
     content:"";position:fixed;inset:0;z-index:-1;
     background:url('ilustraciones/Página web/Paisaje/pitas.jpg') 85% center/105% no-repeat;
@@ -199,19 +201,19 @@
   }
   .about-bgpanel{flex:1 1 37%;position:relative;z-index:1;overflow:hidden;}
   .about-bgpanel img{
-    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;
   }
   .about-content{
     position:relative;z-index:1;
-    flex:1 1 63%;padding:0 3.5em .4em;
-    display:flex;flex-direction:column;justify-content:center;gap:.6em;
+    flex:1 1 63%;padding:3.5em 3.5em 3em;
+    display:flex;flex-direction:column;justify-content:space-between;gap:2em;
   }
   .about-header-row{
     display:flex;justify-content:space-between;align-items:flex-start;
     gap:2em;flex-wrap:wrap;
   }
   .about-intro{flex:1;min-width:0;}
-  .about-header-row h1{font-size:2.4em;margin:0 0 1em;}
+  .about-header-row h1{font-family:'Homemade Apple', cursive;font-size:3.2em;font-weight:400;margin:0 0 1em;}
   .about-portrait{
     width:500px;height:500px;border-radius:50%;overflow:hidden;flex:none;
     box-shadow:0 6px 18px rgba(0,0,0,.18);
@@ -220,11 +222,34 @@
     width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;
   }
   .about-text p{margin:0 0 1.1em;max-width:42ch;color:var(--ink);}
+  .about-signature{
+    font-family:'Homemade Apple', cursive;font-size:1.8em;font-weight:400;
+    margin:.4em 0 0;color:var(--ink);
+  }
   @media(max-width:760px){
     .about-split{flex-direction:column;min-height:0;}
     .about-bgpanel{height:220px;}
     .about-content{padding:2.5em 1.2em;}
   }
+
+  /* cuadro de contacto, dentro de la columna de texto, debajo de la foto redonda */
+  .about-contact{padding-top:1.6em;border-top:1px solid var(--line);}
+  .about-contact h2{font-size:1.5em;margin:0 0 .3em;}
+  .about-contact > p{color:var(--muted);margin:0 0 1.2em;}
+  .contact-form{display:flex;flex-wrap:wrap;gap:.7em;}
+  .contact-form input{
+    flex:1 1 200px;padding:.6em .9em;font-family:var(--body-font);font-size:15px;
+    border:1px solid var(--line);border-radius:6px;background:var(--paper);color:var(--ink);
+  }
+  .contact-form input:focus-visible{outline:2px dotted var(--ink);outline-offset:2px;}
+  .contact-form button{
+    flex:1 1 200px;padding:.6em .9em;font-family:var(--body-font);font-size:15px;font-weight:600;
+    border:1px solid var(--ink);border-radius:6px;background:var(--ink);color:var(--paper);
+    cursor:pointer;transition:background .2s ease,color .2s ease;
+  }
+  .contact-form button:hover{background:var(--paper);color:var(--ink);}
+  .contact-thanks{display:none;color:var(--ink);font-weight:600;margin:0;}
+  .contact-thanks.is-visible{display:block;}
 
   /* ---------- colecciones ---------- */
   .collections{padding:7em 0 4em;}

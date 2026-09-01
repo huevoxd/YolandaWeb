@@ -7,45 +7,17 @@
 <meta name="description" content="Ilustradora científica y de la naturaleza. Conoce mi trabajo y mi camino como ilustradora.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=Dancing+Script:wght@600;700&family=Micro+5+Charted&family=Homemade+Apple&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="about-page">
 
   <!-- CABECERA -->
   <header class="site-header">
     <div class="header-bottom-inner">
-      <button class="mobile-menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-
       <a class="logo" href="index.html">
-        <img src="ilustraciones/Página web/Logo Yolanda/logo yolanda mio.JPG" alt="Logo">
+        <img src="ilustraciones/Página web/Logo Yolanda/logo sin fondo.png" alt="Logo">
       </a>
-
-      <nav class="main-nav header-nav" id="mainNav">
-        <ul>
-          <li><a class="nav-cta" href="sobre-mi.html">Sobre mí</a></li>
-          <li class="has-dropdown">
-            <a href="colecciones.html">Colecciones</a>
-            <ul class="dropdown">
-              <li><a href="colecciones.html">Paisaje</a></li>
-              <li><a href="colecciones.html">Animales no marinos</a></li>
-              <li><a href="colecciones.html">Bodegón</a></li>
-              <li><a href="colecciones.html">Carteles</a></li>
-              <li><a href="colecciones.html">Cuadernos de campo</a></li>
-              <li><a href="colecciones.html">Escultura</a></li>
-              <li><a href="colecciones.html">Especies peligrosas</a></li>
-              <li><a href="colecciones.html">Fauna marina</a></li>
-              <li><a href="colecciones.html">Ilustraciones científicas</a></li>
-              <li><a href="colecciones.html">Otros</a></li>
-              <li><a href="colecciones.html">Pintura</a></li>
-              <li><a href="colecciones.html">Tarjeta de visita</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Tienda</a></li>
-        </ul>
-      </nav>
 
       <div class="header-social">
         <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
@@ -53,9 +25,6 @@
         </a>
         <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-        </a>
-        <a href="/cart" aria-label="Carrito de compra">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3h2.4l2.4 12.2a2 2 0 0 0 2 1.6h8.4a2 2 0 0 0 2-1.6L21.5 7H6"/></svg>
         </a>
       </div>
     </div>
@@ -80,18 +49,32 @@
           <img src="ilustraciones/Página web/WhatsApp Image 2026-03-02 at 00.36.45.jpg" alt="Retrato de Yolanda Ferrón">
         </div>
       </div>
+      <p class="about-signature">Yolanda Ferrón</p>
+
+      <!-- CONTACTO -->
+      <div class="about-contact">
+        <h2>Contacto</h2>
+        <p>Déjame tu correo y tu teléfono y te responderé lo antes posible.</p>
+        <form class="contact-form" id="contactForm">
+          <input type="email" name="email" placeholder="Tu correo electrónico" required>
+          <input type="tel" name="telefono" placeholder="Tu teléfono">
+          <button type="submit">Enviar</button>
+        </form>
+        <p class="contact-thanks" id="contactThanks">¡Gracias! He recibido tus datos y te contactaré pronto.</p>
+      </div>
     </div>
   </main>
 
 <script>
-  const menuToggle = document.getElementById('menuToggle');
-  const mainNav = document.getElementById('mainNav');
-  menuToggle.addEventListener('click', () => {
-    const isOpen = mainNav.classList.toggle('open');
-    menuToggle.classList.toggle('open', isOpen);
-    menuToggle.setAttribute('aria-expanded', isOpen);
+  const contactForm = document.getElementById('contactForm');
+  const contactThanks = document.getElementById('contactThanks');
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    contactForm.style.display = 'none';
+    contactThanks.classList.add('is-visible');
   });
 </script>
 
 </body>
 </html>
+
