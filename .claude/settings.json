@@ -3,7 +3,12 @@
     "allow": [
       "Bash(npx --yes playwright@latest screenshot --viewport-size=1600,900 --wait-for-timeout=600 --full-page \"file:///c:/Users/Usuario/Repos/YolandaWeb/sobre-mi.html\" /tmp/sobremi-align.png)",
       "Bash(npx --yes playwright@latest screenshot --viewport-size=1600,900 --wait-for-timeout=600 \"file:///c:/Users/Usuario/Repos/YolandaWeb/sobre-mi.html\" /tmp/sobremi-align2.png)",
-      "Bash(npx --yes playwright@latest screenshot --viewport-size=1600,900 --wait-for-timeout=600 \"file:///c:/Users/Usuario/Repos/YolandaWeb/sobre-mi.html\" /tmp/sobremi-align3.png)"
+      "Bash(npx --yes playwright@latest screenshot --viewport-size=1600,900 --wait-for-timeout=600 \"file:///c:/Users/Usuario/Repos/YolandaWeb/sobre-mi.html\" /tmp/sobremi-align3.png)",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Bash(python3 -m json.tool)",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('.claude/settings.local.json','utf8'\\)\\); console.log\\('OK: valid JSON'\\)\")",
+      "Bash(python3 -c \"from PIL import Image; print\\(Image.open\\(r'/tmp/sobremi-compact.png'\\).size\\)\")"
     ]
   }
 }
