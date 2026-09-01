@@ -171,16 +171,32 @@
   .hero-footer .footer-avatar{width:80px;height:80px;margin-bottom:.6em;border:1px solid #000;}
   .hero-footer .footer-copyright{font-size:11px;color:#000;font-weight:600;}
 
-  /* collage de fauna marina, a todo color, repartido por el fondo */
+  /* criaturas repartidas por el fondo, en 3 capas de profundidad */
   .hero-creatures{
-    position:absolute;inset:0;z-index:2;
+    position:absolute;inset:0;z-index:2;pointer-events:none;
   }
   .hero-creature{
     position:absolute;transform:translate(-50%,-50%);
-    width:clamp(220px,24vw,360px);height:auto;
-    object-fit:contain;filter:drop-shadow(0 6px 14px rgba(0,0,0,.25));
+    height:auto;object-fit:contain;
   }
-  @media(max-width:760px){ .hero-creature{width:clamp(150px,40vw,240px);} }
+  .hero-creature[hidden]{display:none;}
+  .hero-creature--near{
+    width:clamp(160px,20vw,300px);opacity:1;
+    filter:drop-shadow(0 10px 18px rgba(0,0,0,.2));
+  }
+  .hero-creature--mid{
+    width:clamp(110px,14vw,220px);opacity:.78;
+    filter:drop-shadow(0 6px 12px rgba(0,0,0,.14));
+  }
+  .hero-creature--far{
+    width:clamp(70px,9vw,140px);opacity:.45;
+    filter:blur(.4px) drop-shadow(0 3px 8px rgba(0,0,0,.08));
+  }
+  @media(max-width:760px){
+    .hero-creature--near{width:clamp(120px,34vw,220px);}
+    .hero-creature--mid{width:clamp(90px,26vw,160px);}
+    .hero-creature--far{width:clamp(60px,18vw,110px);}
+  }
 
   /* fondo completo, detrás de las ilustraciones principales */
   .hero-bg{
@@ -199,14 +215,14 @@
     background:url('ilustraciones/Página web/Paisaje/pitas.jpg') 85% center/105% no-repeat;
     opacity:.16;
   }
-  .about-bgpanel{flex:1 1 37%;position:relative;z-index:1;overflow:hidden;}
+  .about-bgpanel{flex:1 1 37%;align-self:flex-start;height:85vh;position:relative;z-index:1;overflow:hidden;}
   .about-bgpanel img{
     position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;
   }
   .about-content{
-    position:relative;z-index:1;
-    flex:1 1 63%;padding:3.5em 3.5em 3em;
-    display:flex;flex-direction:column;justify-content:space-between;gap:2em;
+    position:relative;z-index:1;font-size:90%;
+    flex:1 1 63%;align-self:flex-start;min-height:85vh;padding:2.2em 3.5em .3em;
+    display:flex;flex-direction:column;justify-content:space-between;gap:.8em;
   }
   .about-header-row{
     display:flex;justify-content:space-between;align-items:flex-start;
@@ -216,6 +232,7 @@
   .about-header-row h1{font-family:'Homemade Apple', cursive;font-size:3.2em;font-weight:400;margin:0 0 1em;}
   .about-portrait{
     width:500px;height:500px;border-radius:50%;overflow:hidden;flex:none;
+    margin-top:1.5em;
     box-shadow:0 6px 18px rgba(0,0,0,.18);
   }
   .about-portrait img{
@@ -238,12 +255,12 @@
   .about-contact > p{color:var(--muted);margin:0 0 1.2em;}
   .contact-form{display:flex;flex-wrap:wrap;gap:.7em;}
   .contact-form input{
-    flex:1 1 200px;padding:.6em .9em;font-family:var(--body-font);font-size:15px;
+    flex:1 1 200px;padding:.6em .9em;font-family:var(--body-font);font-size:14px;
     border:1px solid var(--line);border-radius:6px;background:var(--paper);color:var(--ink);
   }
   .contact-form input:focus-visible{outline:2px dotted var(--ink);outline-offset:2px;}
   .contact-form button{
-    flex:1 1 200px;padding:.6em .9em;font-family:var(--body-font);font-size:15px;font-weight:600;
+    flex:1 1 200px;padding:.6em .9em;font-family:var(--body-font);font-size:14px;font-weight:600;
     border:1px solid var(--ink);border-radius:6px;background:var(--ink);color:var(--paper);
     cursor:pointer;transition:background .2s ease,color .2s ease;
   }
@@ -264,6 +281,38 @@
   }
   @media(max-width:760px){
     .collections-list{grid-template-columns:1fr;}
+  }
+
+  /* ---------- tienda (deshabilitada) ---------- */
+  .shop-disabled{padding:6em 0;}
+  .shop-disabled .wrap{
+    display:flex;align-items:center;gap:4em;
+  }
+  .shop-text{flex:1 1 50%;min-width:0;}
+  .shop-badge{
+    display:inline-block;padding:.4em 1em;margin-bottom:1.2em;
+    border:1px solid var(--line);border-radius:999px;
+    font-size:.8em;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);
+  }
+  .shop-text h1{font-size:2.6em;margin:0 0 .7em;}
+  .shop-text p{max-width:48ch;color:var(--ink);margin:0 0 1.1em;}
+  .shop-contact{display:flex;flex-direction:column;gap:.7em;margin-top:1.6em;}
+  .shop-contact-link{
+    display:inline-flex;align-items:center;gap:.6em;
+    font-weight:600;transition:color .2s ease;
+  }
+  .shop-contact-link svg{width:20px;height:20px;flex:none;}
+  .shop-contact-link:hover{color:var(--muted);}
+  .shop-image{flex:1 1 50%;min-width:0;}
+  .shop-image img{
+    width:100%;max-width:480px;margin:0 auto;border-radius:8px;
+    box-shadow:0 12px 30px rgba(0,0,0,.15);
+  }
+  @media(max-width:760px){
+    .shop-disabled{padding:3em 0;}
+    .shop-disabled .wrap{flex-direction:column-reverse;gap:2em;}
+    .shop-image img{max-width:320px;}
   }
 
   /* ---------- footer: contacto + redes ---------- */

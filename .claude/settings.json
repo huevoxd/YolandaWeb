@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx --yes playwright@latest screenshot --viewport-size=1600,900 --wait-for-timeout=600 --full-page \"file:///c:/Users/Usuario/Repos/YolandaWeb/sobre-mi.html\" /tmp/sobremi-align.png)",
+      "Bash(npx --yes playwright@latest screenshot --viewport-size=1600,900 --wait-for-timeout=600 \"file:///c:/Users/Usuario/Repos/YolandaWeb/sobre-mi.html\" /tmp/sobremi-align2.png)",
+      "Bash(npx --yes playwright@latest screenshot --viewport-size=1600,900 --wait-for-timeout=600 \"file:///c:/Users/Usuario/Repos/YolandaWeb/sobre-mi.html\" /tmp/sobremi-align3.png)"
+    ]
+  }
+}

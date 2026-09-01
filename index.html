@@ -44,7 +44,7 @@
           </li>
           <li><a class="nav-cta" href="sobre-mi.html">Sobre mí</a></li>
           <li><a href="#">Eventos</a></li>
-          <li><a href="#">Tienda</a></li>
+          <li><a href="tienda.html">Tienda</a></li>
         </ul>
       </nav>
 
@@ -69,6 +69,19 @@
       <img class="hero-photo-color" id="heroPhotoColor" src="ilustraciones/fondo 3.jpg" alt="">
     </div>
 
+    <!-- CRIATURAS A DISTINTAS PROFUNDIDADES: un juego distinto para cada fondo -->
+    <div class="hero-creatures" id="heroCreatures">
+      <!-- fondo 3: dunas con hierba -->
+      <img class="hero-creature hero-creature--near" data-set="0" style="left:18%;top:80%;" src="ilustraciones/Página web/transparentes/pulpo-transparente.png" alt="">
+      <img class="hero-creature hero-creature--mid" data-set="0" style="left:82%;top:58%;" src="ilustraciones/Página web/transparentes/amonite-transparente.png" alt="">
+      <img class="hero-creature hero-creature--mid" data-set="0" style="left:56%;top:84%;" src="ilustraciones/Página web/transparentes/gamba-transparente.png" alt="">
+      <img class="hero-creature hero-creature--far" data-set="0" style="left:34%;top:32%;" src="ilustraciones/Página web/transparentes/nudibranquio-transparente.png" alt="">
+
+      <!-- fondo 4: montículo de arena con rayos de luz -->
+      <img class="hero-creature hero-creature--near" data-set="1" style="left:46%;top:46%;" src="ilustraciones/Página web/transparentes/manta-transparente.png" alt="">
+      <img class="hero-creature hero-creature--far" data-set="1" style="left:76%;top:24%;" src="ilustraciones/Página web/transparentes/manta-transparente.png" alt="">
+    </div>
+
     <!-- CONTACTO + REDES SOCIALES, integrado en el fondo -->
     <footer class="hero-footer">
       <div class="wrap">
@@ -91,6 +104,10 @@
   const heroBg = heroBackgrounds[heroIndex];
   document.getElementById('heroPhotoBase').src = heroBg;
   document.getElementById('heroPhotoColor').src = heroBg;
+
+  document.querySelectorAll('#heroCreatures .hero-creature').forEach((el) => {
+    el.hidden = el.dataset.set !== String(heroIndex);
+  });
 
   const menuToggle = document.getElementById('menuToggle');
   const mainNav = document.getElementById('mainNav');
