@@ -66,12 +66,6 @@
       <img class="hero-photo-color" id="heroPhotoColor" src="ilustraciones/fondo 3.jpg" alt="">
     </div>
 
-    <!-- CRIATURAS: se van añadiendo poco a poco, un juego distinto para cada fondo -->
-    <div class="hero-creatures" id="heroCreatures">
-      <!-- fondo 3: dunas con hierba -->
-      <img class="hero-creature hero-creature--near hero-creature--fade" data-set="0" style="left:50%;top:88%;" src="ilustraciones/Especies sin fondo/Giba.png" alt="">
-    </div>
-
     <!-- CONTACTO + REDES SOCIALES, integrado en el fondo -->
     <footer class="hero-footer">
       <div class="wrap">
@@ -94,10 +88,6 @@
   const heroBg = heroBackgrounds[heroIndex];
   document.getElementById('heroPhotoBase').src = heroBg;
   document.getElementById('heroPhotoColor').src = heroBg;
-
-  document.querySelectorAll('#heroCreatures .hero-creature').forEach((el) => {
-    el.hidden = el.dataset.set !== String(heroIndex);
-  });
 
   const menuToggle = document.getElementById('menuToggle');
   const mainNav = document.getElementById('mainNav');
