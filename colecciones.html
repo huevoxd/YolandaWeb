@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Colecciones — Yolanda Ferrón</title>
+<title>yolanda_arte</title>
 <meta name="description" content="Colecciones de ilustración de Yolanda Ferrón.">
+<link rel="icon" type="image/png" href="ilustraciones/Página web/Logo Yolanda/logo sin fondo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=Dancing+Script:wght@600;700&family=Homemade+Apple&display=swap" rel="stylesheet">
@@ -12,81 +13,215 @@
 </head>
 <body>
 
-  <!-- CABECERA -->
-  <header class="site-header">
+  <!-- CABECERA: solo el logo, para no distraer del expositor -->
+  <header class="site-header gallery-header">
     <div class="header-bottom-inner">
-      <button class="mobile-menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-
       <a class="logo" href="index.html">
         <img src="ilustraciones/Página web/Logo Yolanda/logo sin fondo.png" alt="Logo">
       </a>
-
-      <nav class="main-nav header-nav" id="mainNav">
-        <ul>
-          <li class="has-dropdown">
-            <a href="colecciones.html">Colecciones</a>
-            <ul class="dropdown">
-              <li><a href="colecciones.html">Paisaje</a></li>
-              <li><a href="colecciones.html">Animales no marinos</a></li>
-              <li><a href="colecciones.html">Bodegón</a></li>
-              <li><a href="colecciones.html">Carteles</a></li>
-              <li><a href="colecciones.html">Cuadernos de campo</a></li>
-              <li><a href="colecciones.html">Escultura</a></li>
-              <li><a href="colecciones.html">Especies peligrosas</a></li>
-              <li><a href="colecciones.html">Fauna marina</a></li>
-              <li><a href="colecciones.html">Ilustraciones científicas</a></li>
-              <li><a href="colecciones.html">Otros</a></li>
-              <li><a href="colecciones.html">Pintura</a></li>
-              <li><a href="colecciones.html">Tarjeta de visita</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-cta" href="sobre-mi.html">Sobre mí</a></li>
-          <li><a href="#">Eventos</a></li>
-          <li><a href="tienda.html">Tienda</a></li>
-        </ul>
-      </nav>
-
-      <div class="header-social">
-        <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-        </a>
-        <a href="/cart" aria-label="Carrito de compra">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3h2.4l2.4 12.2a2 2 0 0 0 2 1.6h8.4a2 2 0 0 0 2-1.6L21.5 7H6"/></svg>
-        </a>
-      </div>
     </div>
   </header>
 
-  <!-- COLECCIONES -->
+  <!-- COLECCIONES: expositor de todas las obras -->
   <main class="collections">
     <div class="wrap">
       <h1>Colecciones</h1>
-      <ul class="collections-list">
-        <li>Paisaje</li>
-        <li>Animales no marinos</li>
-        <li>Bodegón</li>
-        <li>Carteles</li>
-        <li>Cuadernos de campo</li>
-        <li>Escultura</li>
-        <li>Especies peligrosas</li>
-        <li>Fauna marina</li>
-        <li>Ilustraciones científicas</li>
-        <li>Otros</li>
-        <li>Pintura</li>
-        <li>Tarjeta de visita</li>
-      </ul>
+      <section class="gallery-group">
+        <h2>Paisaje</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item" data-src="ilustraciones/Página web/Paisaje/1.jpg"><img src="ilustraciones/Página web/Paisaje/1.jpg" alt="Paisaje" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/Paisaje/2.jpg"><img src="ilustraciones/Página web/Paisaje/2.jpg" alt="Paisaje" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/Paisaje/3.jpg"><img src="ilustraciones/Página web/Paisaje/3.jpg" alt="Paisaje" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/Paisaje/cabo iglesia.jpg"><img src="ilustraciones/Página web/Paisaje/cabo iglesia.jpg" alt="Paisaje" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/Paisaje/pitas.jpg"><img src="ilustraciones/Página web/Paisaje/pitas.jpg" alt="Paisaje" loading="lazy"></div>
+        </div>
+      </section>
+      <section class="gallery-group">
+        <h2>Animales no marinos</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item" data-src="ilustraciones/Página web/animales NO marinos/Araña.jpg"><img src="ilustraciones/Página web/animales NO marinos/Araña.jpg" alt="Animales no marinos" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/animales NO marinos/Buceros bicornis_ Yolanda Ferrón.jpg"><img src="ilustraciones/Página web/animales NO marinos/Buceros bicornis_ Yolanda Ferrón.jpg" alt="Animales no marinos" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/animales NO marinos/IMG_0641.PNG"><img src="ilustraciones/Página web/animales NO marinos/IMG_0641.PNG" alt="Animales no marinos" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/animales NO marinos/IMG_0646.PNG"><img src="ilustraciones/Página web/animales NO marinos/IMG_0646.PNG" alt="Animales no marinos" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/animales NO marinos/IMG_1901.JPG"><img src="ilustraciones/Página web/animales NO marinos/IMG_1901.JPG" alt="Animales no marinos" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/animales NO marinos/IMG_1903.JPG"><img src="ilustraciones/Página web/animales NO marinos/IMG_1903.JPG" alt="Animales no marinos" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/animales NO marinos/Iguana_Yolanda Ferrón.jpg"><img src="ilustraciones/Página web/animales NO marinos/Iguana_Yolanda Ferrón.jpg" alt="Animales no marinos" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/animales NO marinos/flamenco.jpg"><img src="ilustraciones/Página web/animales NO marinos/flamenco.jpg" alt="Animales no marinos" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/animales NO marinos/flecha.jpg"><img src="ilustraciones/Página web/animales NO marinos/flecha.jpg" alt="Animales no marinos" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/animales NO marinos/garra.jpg"><img src="ilustraciones/Página web/animales NO marinos/garra.jpg" alt="Animales no marinos" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/animales NO marinos/huevo.jpg"><img src="ilustraciones/Página web/animales NO marinos/huevo.jpg" alt="Animales no marinos" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/animales NO marinos/iguana.jpg"><img src="ilustraciones/Página web/animales NO marinos/iguana.jpg" alt="Animales no marinos" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/animales NO marinos/liberula.jpg"><img src="ilustraciones/Página web/animales NO marinos/liberula.jpg" alt="Animales no marinos" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/animales NO marinos/pa.jpg"><img src="ilustraciones/Página web/animales NO marinos/pa.jpg" alt="Animales no marinos" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/animales NO marinos/pato.jpg"><img src="ilustraciones/Página web/animales NO marinos/pato.jpg" alt="Animales no marinos" loading="lazy"></div>
+        </div>
+      </section>
+      <section class="gallery-group">
+        <h2>Bodegón</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item" data-src="ilustraciones/Página web/bodeg/bode.jpg"><img src="ilustraciones/Página web/bodeg/bode.jpg" alt="Bodegón" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/bodeg/bodegon -.jpg"><img src="ilustraciones/Página web/bodeg/bodegon -.jpg" alt="Bodegón" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/bodeg/bodegon azul.jpg"><img src="ilustraciones/Página web/bodeg/bodegon azul.jpg" alt="Bodegón" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/bodeg/bodegon cm.jpg"><img src="ilustraciones/Página web/bodeg/bodegon cm.jpg" alt="Bodegón" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/bodeg/bodegon naranja.jpg"><img src="ilustraciones/Página web/bodeg/bodegon naranja.jpg" alt="Bodegón" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/bodeg/bodegon.jpg"><img src="ilustraciones/Página web/bodeg/bodegon.jpg" alt="Bodegón" loading="lazy"></div>
+        </div>
+      </section>
+      <section class="gallery-group">
+        <h2>Carteles</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item" data-src="ilustraciones/Página web/carteles/IMG_2657.JPG"><img src="ilustraciones/Página web/carteles/IMG_2657.JPG" alt="Carteles" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/carteles/IMG_2706.JPG"><img src="ilustraciones/Página web/carteles/IMG_2706.JPG" alt="Carteles" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/carteles/IMG_2730.JPG"><img src="ilustraciones/Página web/carteles/IMG_2730.JPG" alt="Carteles" loading="lazy"></div>
+        </div>
+      </section>
+      <section class="gallery-group">
+        <h2>Cuadernos de campo</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item" data-src="ilustraciones/Página web/cuadernos de campo/conchas sket.jpg"><img src="ilustraciones/Página web/cuadernos de campo/conchas sket.jpg" alt="Cuadernos de campo" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/cuadernos de campo/f16c4015-44f7-4baa-9689-155f149857c5.jpg"><img src="ilustraciones/Página web/cuadernos de campo/f16c4015-44f7-4baa-9689-155f149857c5.jpg" alt="Cuadernos de campo" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/cuadernos de campo/peces sket.jpg"><img src="ilustraciones/Página web/cuadernos de campo/peces sket.jpg" alt="Cuadernos de campo" loading="lazy"></div>
+        </div>
+      </section>
+      <section class="gallery-group">
+        <h2>Escultura</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item" data-src="ilustraciones/Página web/escultura/WhatsApp Image 2022-07-23 at 2.35.36 PM (1).jpeg"><img src="ilustraciones/Página web/escultura/WhatsApp Image 2022-07-23 at 2.35.36 PM (1).jpeg" alt="Escultura" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/escultura/pulpo.jpg"><img src="ilustraciones/Página web/escultura/pulpo.jpg" alt="Escultura" loading="lazy"></div>
+        </div>
+      </section>
+      <section class="gallery-group">
+        <h2>Especies peligrosas</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item" data-src="ilustraciones/Página web/especies peligrosas/4ad8f8d5-83b3-4896-a747-e8d417cc89ec.jpg"><img src="ilustraciones/Página web/especies peligrosas/4ad8f8d5-83b3-4896-a747-e8d417cc89ec.jpg" alt="Especies peligrosas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/especies peligrosas/anemona.jpg"><img src="ilustraciones/Página web/especies peligrosas/anemona.jpg" alt="Especies peligrosas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/especies peligrosas/araña negra.jpg"><img src="ilustraciones/Página web/especies peligrosas/araña negra.jpg" alt="Especies peligrosas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/especies peligrosas/araña.jpg"><img src="ilustraciones/Página web/especies peligrosas/araña.jpg" alt="Especies peligrosas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/especies peligrosas/barracuda.jpg"><img src="ilustraciones/Página web/especies peligrosas/barracuda.jpg" alt="Especies peligrosas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/especies peligrosas/cabracho.jpg"><img src="ilustraciones/Página web/especies peligrosas/cabracho.jpg" alt="Especies peligrosas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/especies peligrosas/carabela.jpg"><img src="ilustraciones/Página web/especies peligrosas/carabela.jpg" alt="Especies peligrosas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/especies peligrosas/erizo.jpg"><img src="ilustraciones/Página web/especies peligrosas/erizo.jpg" alt="Especies peligrosas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/especies peligrosas/ermitaño.jpg"><img src="ilustraciones/Página web/especies peligrosas/ermitaño.jpg" alt="Especies peligrosas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/especies peligrosas/escorpion w.jpg"><img src="ilustraciones/Página web/especies peligrosas/escorpion w.jpg" alt="Especies peligrosas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/especies peligrosas/escorpion.jpg"><img src="ilustraciones/Página web/especies peligrosas/escorpion.jpg" alt="Especies peligrosas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/especies peligrosas/manta.jpg"><img src="ilustraciones/Página web/especies peligrosas/manta.jpg" alt="Especies peligrosas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/especies peligrosas/martillo.jpg"><img src="ilustraciones/Página web/especies peligrosas/martillo.jpg" alt="Especies peligrosas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/especies peligrosas/mielga.jpg"><img src="ilustraciones/Página web/especies peligrosas/mielga.jpg" alt="Especies peligrosas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/especies peligrosas/morena.jpg"><img src="ilustraciones/Página web/especies peligrosas/morena.jpg" alt="Especies peligrosas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/especies peligrosas/pez león.jpg"><img src="ilustraciones/Página web/especies peligrosas/pez león.jpg" alt="Especies peligrosas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/especies peligrosas/pez piedra.jpg"><img src="ilustraciones/Página web/especies peligrosas/pez piedra.jpg" alt="Especies peligrosas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/especies peligrosas/tembladera.jpg"><img src="ilustraciones/Página web/especies peligrosas/tembladera.jpg" alt="Especies peligrosas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/especies peligrosas/tiburón blanco.jpg"><img src="ilustraciones/Página web/especies peligrosas/tiburón blanco.jpg" alt="Especies peligrosas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/especies peligrosas/tintorera.jpg"><img src="ilustraciones/Página web/especies peligrosas/tintorera.jpg" alt="Especies peligrosas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/especies peligrosas/tomates.jpg"><img src="ilustraciones/Página web/especies peligrosas/tomates.jpg" alt="Especies peligrosas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/especies peligrosas/toro.jpg"><img src="ilustraciones/Página web/especies peligrosas/toro.jpg" alt="Especies peligrosas" loading="lazy"></div>
+        </div>
+      </section>
+      <section class="gallery-group">
+        <h2>Fauna marina</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item" data-src="ilustraciones/Página web/fauna marina/Amonite_Yolanda Ferron.jpg"><img src="ilustraciones/Página web/fauna marina/Amonite_Yolanda Ferron.jpg" alt="Fauna marina" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/fauna marina/Gamba_Yolanda Ferrón.jpg"><img src="ilustraciones/Página web/fauna marina/Gamba_Yolanda Ferrón.jpg" alt="Fauna marina" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/fauna marina/IMG_1904.JPG"><img src="ilustraciones/Página web/fauna marina/IMG_1904.JPG" alt="Fauna marina" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/fauna marina/IMG_2863.JPG"><img src="ilustraciones/Página web/fauna marina/IMG_2863.JPG" alt="Fauna marina" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/fauna marina/IMG_2864.JPG"><img src="ilustraciones/Página web/fauna marina/IMG_2864.JPG" alt="Fauna marina" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/fauna marina/IMG_3485.JPG"><img src="ilustraciones/Página web/fauna marina/IMG_3485.JPG" alt="Fauna marina" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/fauna marina/Nudibranquio_Yolanda Ferrón.jpg"><img src="ilustraciones/Página web/fauna marina/Nudibranquio_Yolanda Ferrón.jpg" alt="Fauna marina" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/fauna marina/Rascacio_Yolanda Ferron.png"><img src="ilustraciones/Página web/fauna marina/Rascacio_Yolanda Ferron.png" alt="Fauna marina" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/fauna marina/Tortuga Boba_Yolanda Ferrón.jpg"><img src="ilustraciones/Página web/fauna marina/Tortuga Boba_Yolanda Ferrón.jpg" alt="Fauna marina" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/fauna marina/amonite.jpg"><img src="ilustraciones/Página web/fauna marina/amonite.jpg" alt="Fauna marina" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/fauna marina/farol.JPG"><img src="ilustraciones/Página web/fauna marina/farol.JPG" alt="Fauna marina" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/fauna marina/final rascarcio.png"><img src="ilustraciones/Página web/fauna marina/final rascarcio.png" alt="Fauna marina" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/fauna marina/kk.jpg"><img src="ilustraciones/Página web/fauna marina/kk.jpg" alt="Fauna marina" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/fauna marina/medusa.jpg"><img src="ilustraciones/Página web/fauna marina/medusa.jpg" alt="Fauna marina" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/fauna marina/medusaa.jpg"><img src="ilustraciones/Página web/fauna marina/medusaa.jpg" alt="Fauna marina" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/fauna marina/mudibranqui.jpg"><img src="ilustraciones/Página web/fauna marina/mudibranqui.jpg" alt="Fauna marina" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/fauna marina/pulpo_color_.jpg"><img src="ilustraciones/Página web/fauna marina/pulpo_color_.jpg" alt="Fauna marina" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/fauna marina/raspa pez.jpg"><img src="ilustraciones/Página web/fauna marina/raspa pez.jpg" alt="Fauna marina" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/fauna marina/thumbnail_SAVE_20220712_091415.jpg"><img src="ilustraciones/Página web/fauna marina/thumbnail_SAVE_20220712_091415.jpg" alt="Fauna marina" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/fauna marina/tortuga boba.jpg"><img src="ilustraciones/Página web/fauna marina/tortuga boba.jpg" alt="Fauna marina" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/fauna marina/tortuga galapagos.jpg"><img src="ilustraciones/Página web/fauna marina/tortuga galapagos.jpg" alt="Fauna marina" loading="lazy"></div>
+        </div>
+      </section>
+      <section class="gallery-group">
+        <h2>Ilustraciones científicas</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item" data-src="ilustraciones/Página web/ilustraciones cientificas/1_JPG.jpeg"><img src="ilustraciones/Página web/ilustraciones cientificas/1_JPG.jpeg" alt="Ilustraciones científicas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/ilustraciones cientificas/Emiliania_Yolanda Ferrón.jpg"><img src="ilustraciones/Página web/ilustraciones cientificas/Emiliania_Yolanda Ferrón.jpg" alt="Ilustraciones científicas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/ilustraciones cientificas/IMG_1166.PNG"><img src="ilustraciones/Página web/ilustraciones cientificas/IMG_1166.PNG" alt="Ilustraciones científicas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/ilustraciones cientificas/IMG_1167.PNG"><img src="ilustraciones/Página web/ilustraciones cientificas/IMG_1167.PNG" alt="Ilustraciones científicas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/ilustraciones cientificas/IMG_1168.PNG"><img src="ilustraciones/Página web/ilustraciones cientificas/IMG_1168.PNG" alt="Ilustraciones científicas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/ilustraciones cientificas/IMG_1169.PNG"><img src="ilustraciones/Página web/ilustraciones cientificas/IMG_1169.PNG" alt="Ilustraciones científicas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/ilustraciones cientificas/IMG_2839.JPG"><img src="ilustraciones/Página web/ilustraciones cientificas/IMG_2839.JPG" alt="Ilustraciones científicas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/ilustraciones cientificas/Zostera marina_2_Yolanda Ferron Horcas.JPG"><img src="ilustraciones/Página web/ilustraciones cientificas/Zostera marina_2_Yolanda Ferron Horcas.JPG" alt="Ilustraciones científicas" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/ilustraciones cientificas/Zostera marina_Yolanda Ferron Horcas.JPG"><img src="ilustraciones/Página web/ilustraciones cientificas/Zostera marina_Yolanda Ferron Horcas.JPG" alt="Ilustraciones científicas" loading="lazy"></div>
+        </div>
+      </section>
+      <section class="gallery-group">
+        <h2>Otros</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item" data-src="ilustraciones/Página web/otros/IMG_0635.PNG"><img src="ilustraciones/Página web/otros/IMG_0635.PNG" alt="Otros" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/otros/IMG_0706.PNG"><img src="ilustraciones/Página web/otros/IMG_0706.PNG" alt="Otros" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/otros/IMG_0763.jpg"><img src="ilustraciones/Página web/otros/IMG_0763.jpg" alt="Otros" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/otros/IMG_0769.PNG"><img src="ilustraciones/Página web/otros/IMG_0769.PNG" alt="Otros" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/otros/kj.png"><img src="ilustraciones/Página web/otros/kj.png" alt="Otros" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/otros/ñl.png"><img src="ilustraciones/Página web/otros/ñl.png" alt="Otros" loading="lazy"></div>
+        </div>
+      </section>
+      <section class="gallery-group">
+        <h2>Pintura</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item" data-src="ilustraciones/Página web/pintura/4.jpg"><img src="ilustraciones/Página web/pintura/4.jpg" alt="Pintura" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/pintura/5.jpg"><img src="ilustraciones/Página web/pintura/5.jpg" alt="Pintura" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/pintura/6.jpg"><img src="ilustraciones/Página web/pintura/6.jpg" alt="Pintura" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/pintura/7.jpg"><img src="ilustraciones/Página web/pintura/7.jpg" alt="Pintura" loading="lazy"></div>
+        </div>
+      </section>
+      <section class="gallery-group">
+        <h2>Tarjeta de visita</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item" data-src="ilustraciones/Página web/tarjeta visita/1000272095_da65266ea45e1a1eca62cc684cea600b-23_3_2026, 23_16_10.jpg"><img src="ilustraciones/Página web/tarjeta visita/1000272095_da65266ea45e1a1eca62cc684cea600b-23_3_2026, 23_16_10.jpg" alt="Tarjeta de visita" loading="lazy"></div>
+          <div class="gallery-item" data-src="ilustraciones/Página web/tarjeta visita/1000272096_215e568d006acf40a16e4d6e475ffe94-23_3_2026, 23_18_58.jpg"><img src="ilustraciones/Página web/tarjeta visita/1000272096_215e568d006acf40a16e4d6e475ffe94-23_3_2026, 23_18_58.jpg" alt="Tarjeta de visita" loading="lazy"></div>
+        </div>
+      </section>
     </div>
   </main>
 
+  <!-- VISOR A PANTALLA COMPLETA -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">✕</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  </div>
+
 <script>
-  const menuToggle = document.getElementById('menuToggle');
-  const mainNav = document.getElementById('mainNav');
-  menuToggle.addEventListener('click', () => {
-    const isOpen = mainNav.classList.toggle('open');
-    menuToggle.classList.toggle('open', isOpen);
-    menuToggle.setAttribute('aria-expanded', isOpen);
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxBackdrop = document.getElementById('lightboxBackdrop');
+  const lightboxClose = document.getElementById('lightboxClose');
+
+  function openLightbox(src, alt) {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || '';
+    lightbox.classList.add('is-open');
+    document.body.classList.add('lightbox-open');
+  }
+  function closeLightbox() {
+    lightbox.classList.remove('is-open');
+    document.body.classList.remove('lightbox-open');
+    lightboxImg.src = '';
+  }
+
+  document.querySelectorAll('.gallery-item').forEach((item) => {
+    item.addEventListener('click', () => {
+      const img = item.querySelector('img');
+      openLightbox(item.dataset.src, img ? img.alt : '');
+    });
+  });
+  lightboxBackdrop.addEventListener('click', closeLightbox);
+  lightboxClose.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
   });
 </script>
 
