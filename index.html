@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=Dancing+Script:wght@600;700&family=Homemade+Apple&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="ilustraciones/Página web/Logo Yolanda/logo sin fondo.png">
 </head>
 <body class="no-scroll">
 
@@ -62,8 +63,7 @@
   <!-- ILUSTRACIÓN ÚNICA + NAV INTEGRADO EN EL FONDO -->
   <div class="hero-stack hero-stack--single">
     <div class="hero-photo">
-      <img class="hero-photo-base" id="heroPhotoBase" src="ilustraciones/fondo 3.jpg" alt="Ilustración de fondo">
-      <img class="hero-photo-color" id="heroPhotoColor" src="ilustraciones/fondo 3.jpg" alt="">
+      <img class="hero-photo-img" id="heroPhotoImg" src="ilustraciones/fondo 3.png" alt="Ilustración de fondo">
     </div>
 
     <!-- CONTACTO + REDES SOCIALES, integrado en el fondo -->
@@ -80,14 +80,13 @@
 
 <script>
   const heroBackgrounds = [
-    'ilustraciones/fondo 3.jpg',
-    'ilustraciones/fondo 4.jpg'
+    'ilustraciones/fondo 3.png',
+    'ilustraciones/fondo 4.png'
   ];
   const heroIndex = Number(sessionStorage.getItem('heroBgIndex') || 0) % heroBackgrounds.length;
   sessionStorage.setItem('heroBgIndex', (heroIndex + 1) % heroBackgrounds.length);
   const heroBg = heroBackgrounds[heroIndex];
-  document.getElementById('heroPhotoBase').src = heroBg;
-  document.getElementById('heroPhotoColor').src = heroBg;
+  document.getElementById('heroPhotoImg').src = heroBg;
 
   const menuToggle = document.getElementById('menuToggle');
   const mainNav = document.getElementById('mainNav');

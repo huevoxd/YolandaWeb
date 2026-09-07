@@ -148,19 +148,8 @@
     position:absolute;inset:0;width:100%;height:100%;
     object-fit:cover;display:block;
   }
-  .hero-photo-base{
-    filter:grayscale(1) brightness(1) contrast(1.8);opacity:.45;
-  }
-  .hero-photo-color{
-    filter:grayscale(0) saturate(1.9) contrast(1.4) brightness(1.05);opacity:.4;
-    -webkit-mask-image:
-      radial-gradient(circle at 14% 78%, #fff 0%, #fff 8%, transparent 17%),
-      radial-gradient(circle at 47% 84%, #fff 0%, #fff 8%, transparent 18%),
-      radial-gradient(circle at 82% 74%, #fff 0%, #fff 6%, transparent 14%);
-    mask-image:
-      radial-gradient(circle at 14% 78%, #fff 0%, #fff 8%, transparent 17%),
-      radial-gradient(circle at 47% 84%, #fff 0%, #fff 8%, transparent 18%),
-      radial-gradient(circle at 82% 74%, #fff 0%, #fff 6%, transparent 14%);
+  .hero-photo-img{
+    opacity:1;filter:none;
   }
 
   /* footer integrado en el fondo del hero, para caber en una sola pantalla */
@@ -214,20 +203,16 @@
   /* ---------- sobre mí ---------- */
   body.about-page{position:relative;min-height:100vh;}
   body.about-page .site-header{position:absolute;top:0;left:0;right:0;z-index:10;background:transparent;}
-  .about-split{position:relative;display:flex;min-height:100vh;}
+  .about-split{position:relative;}
   .about-split::before{
     content:"";position:fixed;inset:0;z-index:-1;
     background:url('ilustraciones/Página web/Paisaje/pitas.jpg') 85% center/105% no-repeat;
     opacity:.16;
   }
-  .about-bgpanel{flex:1 1 37%;position:relative;z-index:1;overflow:hidden;}
-  .about-bgpanel img{
-    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;
-  }
   .about-content{
     position:relative;z-index:1;font-size:90%;
-    flex:1 1 63%;padding:2.5em 3.5em 3.5em;
-    display:flex;flex-direction:column;justify-content:space-between;gap:.6em;
+    max-width:1100px;margin:0 auto;padding:6em 3.5em 3.5em;
+    display:flex;flex-direction:column;gap:1.6em;
   }
   .about-header-row{
     display:flex;justify-content:space-between;align-items:flex-start;
@@ -248,10 +233,20 @@
     font-family:'Homemade Apple', cursive;font-size:1.8em;font-weight:400;
     margin:.4em 0 0;color:var(--ink);
   }
+  /* segundo bloque: texto a mano a la izquierda + hueco de foto a la derecha */
+  .about-secondary{
+    display:flex;align-items:center;gap:2.5em;flex-wrap:wrap;
+    padding-top:.4em;
+  }
+  .about-secondary-text{
+    flex:1 1 320px;font-family:'Homemade Apple', cursive;font-size:2em;font-weight:400;
+    line-height:1.3;color:var(--ink);margin:0;
+  }
+  .about-secondary-photo{
+    flex:1 1 320px;width:100%;max-width:420px;aspect-ratio:4/3;border-radius:8px;
+  }
   @media(max-width:760px){
-    .about-split{flex-direction:column;min-height:0;}
-    .about-bgpanel{height:220px;}
-    .about-content{padding:2.5em 1.2em;}
+    .about-content{padding:6em 1.2em 2.5em;}
   }
 
   /* cuadro de contacto, dentro de la columna de texto, debajo de la foto redonda */
@@ -289,7 +284,7 @@
   }
 
   /* ---------- tienda (deshabilitada) ---------- */
-  .shop-disabled{padding:6em 0;}
+  .shop-disabled{padding:1.5em 0 4em;}
   .shop-disabled .wrap{
     display:flex;align-items:center;gap:4em;
   }
