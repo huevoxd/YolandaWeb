@@ -27,7 +27,7 @@
       <nav class="main-nav header-nav" id="mainNav">
         <ul>
           <li><a href="colecciones.html">Colecciones</a></li>
-          <li><a class="nav-cta" href="#sobre-mi">Sobre mí</a></li>
+          <li><a class="nav-cta" href="sobre-mi.html">Sobre mí</a></li>
           <li><a href="#eventos">Eventos</a></li>
           <li><a href="tienda.html">Tienda</a></li>
         </ul>
@@ -44,38 +44,18 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3h2.4l2.4 12.2a2 2 0 0 0 2 1.6h8.4a2 2 0 0 0 2-1.6L21.5 7H6"/></svg>
         </a>
       </div>
+      <div class="sidebar-card">
+        <img src="ilustraciones/Página web/tarjeta visita/1000272095_da65266ea45e1a1eca62cc684cea600b-23_3_2026, 23_16_10.jpg" alt="Tarjeta de presentación">
+      </div>
+      <p class="footer-copyright sidebar-copyright">Copyright 2026 Yolanda Ferron. All Rights Reserved.</p>
     </div>
   </header>
 
-  <!-- PORTADA: ilustración del pulpo a pantalla completa -->
+  <!-- PORTADA: fondo a pantalla completa, alterna en cada visita -->
   <div class="hero-stack hero-stack--single">
     <div class="hero-photo">
-      <img class="hero-photo-main" src="ilustraciones/fondo 4.png" alt="Ilustración de fondo">
-      <span class="hero-caption">Ilustración científica y naturalista</span>
-      <p class="footer-copyright hero-copyright">Copyright 2026 Yolanda Ferron. All Rights Reserved.</p>
+      <img class="hero-photo-main" id="heroPhotoMain" src="ilustraciones/fondo 4.png" alt="Ilustración de fondo">
     </div>
-  </div>
-
-  <!-- SOBRE MÍ (la página completa, tal cual, con un margen blanco alrededor) -->
-  <div id="sobre-mi" class="index-sobremi-wrap">
-    <main class="about-split about-split--embed">
-      <div class="about-content">
-        <div class="about-header-row">
-          <div class="about-intro">
-            <h1>Sobre mí</h1>
-            <div class="about-text">
-              <p>Soy Yolanda Ferrón, ilustradora científica y de la naturaleza. Mi trabajo nace de la observación del mundo marino y terrestre: cada trazo busca capturar la anatomía y el carácter de la especie que retrato, desde una medusa hasta un tiburón martillo.</p>
-              <p>Combino el rigor de la ilustración científica con una mirada personal, cuidando cada detalle para que la pieza final sea tan precisa como expresiva.</p>
-              <p>Si quieres encargar una ilustración o conocer más sobre mis colecciones, no dudes en escribirme.</p>
-            </div>
-          </div>
-          <div class="about-portrait">
-            <img id="aboutPortraitImg" src="ilustraciones/Página web/WhatsApp Image 2026-03-02 at 00.36.45.jpg" alt="Retrato de Yolanda Ferrón">
-          </div>
-        </div>
-        <p class="about-signature">Yolanda Ferrón</p>
-      </div>
-    </main>
   </div>
 
   <!-- MIS TRABAJOS: carrusel con ventanas circulares -->
@@ -100,6 +80,11 @@
   </section>
 
 <script>
+  const heroBackgrounds = ['ilustraciones/fondo 3.png', 'ilustraciones/fondo 4.png'];
+  const heroIndex = Number(sessionStorage.getItem('heroBgIndex') || 0) % heroBackgrounds.length;
+  sessionStorage.setItem('heroBgIndex', (heroIndex + 1) % heroBackgrounds.length);
+  document.getElementById('heroPhotoMain').src = heroBackgrounds[heroIndex];
+
   const worksTrack = document.getElementById('worksTrack');
   document.getElementById('worksPrev').addEventListener('click', (e) => {
     e.stopPropagation();
@@ -125,11 +110,6 @@
     e.preventDefault();
     document.body.classList.toggle('menu-collapsed');
   });
-
-  const portraitImages = ['ilustraciones/Yolandapagina.jpeg'];
-  const portraitIndex = Number(sessionStorage.getItem('aboutPortraitIndex') || 0) % portraitImages.length;
-  sessionStorage.setItem('aboutPortraitIndex', (portraitIndex + 1) % portraitImages.length);
-  document.getElementById('aboutPortraitImg').src = portraitImages[portraitIndex];
 </script>
 
 </body>

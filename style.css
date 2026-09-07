@@ -50,17 +50,30 @@
     body.home-page .logo img{filter:invert(1);}
     body.home-page .header-social a{color:#f4efe4;border-color:rgba(244,239,228,.55);}
     body.home-page .header-social a:hover{background:rgba(244,239,228,.18);}
-    /* el menú entero (fondo, texto y redes) se retrae/extiende al pinchar el logo */
+    body.home-page .sidebar-copyright{
+      display:block;font-size:9px;font-weight:600;color:#f4efe4;
+      margin:.8em 0 0;
+    }
+    body.home-page .sidebar-card{
+      width:56px;height:56px;border-radius:50%;overflow:hidden;flex:none;
+      margin:1.4em 0 0;border:1px solid rgba(244,239,228,.5);
+    }
+    body.home-page .sidebar-card img{width:100%;height:100%;object-fit:cover;display:block;}
+    /* el menú entero (fondo, texto, redes, tarjeta y copyright) se retrae/extiende al pinchar el logo: solo queda el logo */
     body.home-page .header-nav,
-    body.home-page .header-social{
+    body.home-page .header-social,
+    body.home-page .sidebar-card,
+    body.home-page .sidebar-copyright{
       overflow:hidden;max-height:600px;opacity:1;
-      transition:max-height .35s ease,opacity .3s ease;
+      transition:max-height .35s ease,opacity .3s ease,margin .35s ease;
     }
     body.home-page.menu-collapsed .site-header{width:96px;}
     body.home-page.menu-collapsed .hero-stack{margin-left:96px;}
     body.home-page.menu-collapsed .header-nav,
-    body.home-page.menu-collapsed .header-social{
-      max-height:0;opacity:0;pointer-events:none;
+    body.home-page.menu-collapsed .header-social,
+    body.home-page.menu-collapsed .sidebar-card,
+    body.home-page.menu-collapsed .sidebar-copyright{
+      max-height:0;opacity:0;margin:0;pointer-events:none;
     }
   }
   body.home-page .hero-stack{margin-left:260px;transition:margin-left .4s ease;}
@@ -209,22 +222,6 @@
     padding:0;background:#efe6d5;
   }
 
-  /* rótulo en la esquina superior de la ilustración de portada */
-  .hero-caption{
-    position:absolute;top:1.6em;right:5.5em;z-index:4;
-    font-family:'Rouge Script',cursive;font-weight:400;font-size:1.6rem;
-    letter-spacing:.02em;color:var(--ink);
-    background:transparent;padding:.2em .8em;border-radius:4px;
-  }
-  /* copyright, justo debajo del rótulo */
-  .hero-copyright{
-    position:absolute;top:4.6em;right:5.5em;z-index:4;
-    font-size:9px;color:#000;font-weight:600;margin:0;padding:0 .8em;
-  }
-  @media(max-width:760px){
-    .hero-caption{top:auto;bottom:2em;right:1em;left:1em;text-align:center;font-size:.85rem;}
-    .hero-copyright{top:auto;bottom:1em;right:1em;left:1em;text-align:center;padding:0;}
-  }
 
   /* criaturas repartidas por el fondo, en 3 capas de profundidad */
   .hero-creatures{
