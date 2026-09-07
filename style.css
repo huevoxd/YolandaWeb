@@ -205,10 +205,8 @@
   }
   .hero-photo .hero-photo-main{
     filter:none;opacity:1;
-    object-fit:contain;object-position:center;
-    padding:0;
-    background:#efe6d5 url('ilustraciones/pexels-jonathanborba-36299690.jpg') center/cover no-repeat;
-    transform:scaleX(1.22) scaleY(1.08) translateY(4%);
+    object-fit:cover;object-position:center;
+    padding:0;background:#efe6d5;
   }
 
   /* rótulo en la esquina superior de la ilustración de portada */
