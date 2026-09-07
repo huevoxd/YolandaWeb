@@ -44,9 +44,10 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3h2.4l2.4 12.2a2 2 0 0 0 2 1.6h8.4a2 2 0 0 0 2-1.6L21.5 7H6"/></svg>
         </a>
       </div>
-      <div class="sidebar-card">
+      <div class="footer-avatar sidebar-avatar" id="footerAvatar" role="button" tabindex="0" aria-label="Ampliar tarjeta de presentación" aria-expanded="false">
         <img src="ilustraciones/Página web/tarjeta visita/1000272095_da65266ea45e1a1eca62cc684cea600b-23_3_2026, 23_16_10.jpg" alt="Tarjeta de presentación">
       </div>
+      <div class="avatar-backdrop" id="avatarBackdrop"></div>
       <p class="footer-copyright sidebar-copyright">Copyright 2026 Yolanda Ferron. All Rights Reserved.</p>
     </div>
   </header>
@@ -110,6 +111,24 @@
     e.preventDefault();
     document.body.classList.toggle('menu-collapsed');
   });
+
+  const footerAvatar = document.getElementById('footerAvatar');
+  const avatarBackdrop = document.getElementById('avatarBackdrop');
+  function setAvatarExpanded(expand) {
+    footerAvatar.classList.toggle('is-expanded', expand);
+    avatarBackdrop.classList.toggle('is-visible', expand);
+    footerAvatar.setAttribute('aria-expanded', expand);
+  }
+  footerAvatar.addEventListener('click', () => {
+    setAvatarExpanded(!footerAvatar.classList.contains('is-expanded'));
+  });
+  footerAvatar.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      setAvatarExpanded(!footerAvatar.classList.contains('is-expanded'));
+    }
+  });
+  avatarBackdrop.addEventListener('click', () => setAvatarExpanded(false));
 </script>
 
 </body>
