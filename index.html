@@ -70,7 +70,7 @@
             <a class="about-cta" href="sobre-mi.html">Conóceme un poco más</a>
           </div>
           <div class="about-portrait">
-            <img id="aboutPortraitImg" src="ilustraciones/Página web/WhatsApp Image 2026-03-02 at 00.36.45.jpg" alt="Retrato de Yolanda Ferrón">
+            <img id="aboutPortraitImg" src="ilustraciones/Yolandapagina.jpeg" alt="Retrato de Yolanda Ferrón">
           </div>
         </div>
       </div>
@@ -149,11 +149,6 @@
     e.preventDefault();
     document.body.classList.toggle('menu-collapsed');
   });
-
-  const portraitImages = ['ilustraciones/Yolandapagina.jpeg'];
-  const portraitIndex = Number(sessionStorage.getItem('aboutPortraitIndex') || 0) % portraitImages.length;
-  sessionStorage.setItem('aboutPortraitIndex', (portraitIndex + 1) % portraitImages.length);
-  document.getElementById('aboutPortraitImg').src = portraitImages[portraitIndex];
 
   const footerAvatar = document.getElementById('footerAvatar');
   const avatarBackdrop = document.getElementById('avatarBackdrop');
