@@ -23,77 +23,59 @@
   }
   body.no-scroll .hero-stack{height:100vh;}
 
-  /* portada de una sola página: cabecera a la izquierda de la imagen, resto con scroll normal */
+  /* portada de una sola página: cabecera superpuesta sobre la imagen */
   body.home-page{position:relative;}
   body.home-page .site-header{
-    position:absolute;top:0;left:0;right:auto;bottom:auto;
-    width:260px;height:100vh;z-index:10;
-    background:#111;
-    box-shadow:2px 0 14px rgba(0,0,0,.15);
-    transition:width .4s ease,background .35s ease,box-shadow .35s ease;
+    position:absolute;top:0;left:0;right:0;z-index:10;
+    background:transparent;box-shadow:none;
   }
-  body.home-page .header-bottom-inner{
-    flex-direction:column;align-items:center;justify-content:space-between;
-    height:100%;padding:3.5em 1.6em;text-align:center;
-  }
-  body.home-page .header-nav{margin-left:0;width:100%;}
   body.home-page .header-nav a{
-    font-family:var(--nav-font);font-weight:400;
-    -webkit-text-stroke:0;
-    font-size:23px;color:#f4efe4;
+    font-family:var(--nav-font);font-weight:400;-webkit-text-stroke:0;
   }
-  body.home-page .header-nav a:hover{color:#d8cdb8;}
-  body.home-page .header-nav ul{flex-direction:column;align-items:center;gap:2.4em;}
-  body.home-page .header-social{margin-left:0;margin-top:0;justify-content:center;width:100%;}
-  @media(min-width:761px){
-    body.home-page .logo{cursor:pointer;flex:none;}
-    body.home-page .logo img{filter:invert(1);}
-    body.home-page .header-social a{color:#f4efe4;border-color:rgba(244,239,228,.55);}
-    body.home-page .header-social a:hover{background:rgba(244,239,228,.18);}
-    body.home-page .sidebar-copyright{
-      display:block;font-size:9px;font-weight:600;color:#f4efe4;
-      margin:.8em 0 0;
-    }
-    /* tarjeta de presentación, pequeña en el menú, con el mismo visualizador de antes */
-    body.home-page .sidebar-avatar:not(.is-expanded){
-      width:56px;height:56px;margin:1.4em 0 0;flex:none;
-    }
-    /* el menú entero (fondo, texto, redes, tarjeta y copyright) se retrae/extiende al pinchar el logo: solo queda el logo */
-    body.home-page .header-nav,
-    body.home-page .header-social,
-    body.home-page .sidebar-avatar,
-    body.home-page .sidebar-copyright{
-      overflow:hidden;max-height:600px;opacity:1;
-      transition:max-height .35s ease,opacity .3s ease,margin .35s ease;
-    }
-    /* menú recogido: solo el logo, sin el fondo negro ni la sombra */
-    body.home-page.menu-collapsed .site-header{
-      width:150px;height:auto;background:transparent;box-shadow:none;
-    }
-    body.home-page.menu-collapsed .header-bottom-inner{padding:1.4em 1.4em;height:auto;}
-    body.home-page.menu-collapsed .logo img{filter:none;}
-    body.home-page.menu-collapsed .header-nav,
-    body.home-page.menu-collapsed .header-social,
-    body.home-page.menu-collapsed .sidebar-avatar,
-    body.home-page.menu-collapsed .sidebar-copyright{
-      max-height:0;opacity:0;margin:0;pointer-events:none;
-    }
-  }
-  /* la portada ocupa siempre todo el ancho; el menú va superpuesto, así la imagen
-     no se reescala (ni cambia de definición) al recoger/desplegar el menú */
+  /* la portada ocupa siempre todo el ancho; el menú va superpuesto */
   body.home-page .hero-stack{margin-left:0;}
-  @media(max-width:760px){
-    body.home-page .site-header{
-      position:absolute;top:0;left:0;right:0;width:auto;height:auto;
-      background:transparent;box-shadow:none;
+
+  /* ---- escritorio: menú horizontal superpuesto ---- */
+  @media(min-width:761px){
+    body.home-page .header-bottom-inner{
+      flex-direction:row;align-items:center;justify-content:flex-start;
+      height:auto;padding:1.5em 3.5em;gap:1.4em;text-align:left;
     }
+    body.home-page .header-nav{margin-left:1.4em;width:auto;}
+    body.home-page .header-nav ul{flex-direction:row;align-items:center;gap:2.6em;}
+    body.home-page .header-nav a{font-size:22px;color:var(--ink);}
+    body.home-page .header-nav a:hover{color:var(--muted);}
+    body.home-page .header-social{margin-left:auto;margin-top:0;width:auto;}
+    body.home-page .header-social a{color:var(--ink);border-color:var(--line);}
+    body.home-page .header-social a:hover{background:var(--accent-hover);}
+    body.home-page .sidebar-avatar,
+    body.home-page .sidebar-copyright{display:none;}
+    /* velo blanco tenue arriba para que el menú oscuro se lea sobre la ilustración */
+    .hero-stack--single .hero-photo::before{
+      content:"";position:absolute;left:0;right:0;top:0;height:18vh;z-index:3;
+      pointer-events:none;
+      background:linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,.7));
+    }
+  }
+
+  /* ---- móvil: hamburguesa + menú desplegable vertical oscuro ---- */
+  @media(max-width:760px){
     body.home-page .header-bottom-inner{
       flex-direction:row;justify-content:flex-start;height:auto;
-      padding:.5em .6em;text-align:left;
+      padding:.5em .6em;text-align:left;flex-wrap:wrap;
     }
-    body.home-page .header-nav ul{flex-direction:column;}
     body.home-page .header-social{margin-top:0;margin-left:auto;}
     body.home-page .hero-stack{margin-left:0;}
+    /* la tarjeta y el copyright son del menú lateral; en móvil estorban */
+    body.home-page .sidebar-avatar,
+    body.home-page .sidebar-copyright{display:none;}
+    /* menú desplegable legible: fondo oscuro tras los enlaces color crema */
+    body.home-page .header-nav{margin-left:0;}
+    body.home-page .main-nav.open{
+      background:#111;border-radius:0 0 10px 10px;padding:.4em 1em 1em;
+    }
+    body.home-page .header-nav ul{flex-direction:column;gap:0;}
+    body.home-page .header-nav a{color:#f4efe4;font-size:22px;}
   }
   a{color:var(--ink);text-decoration:none;}
   img{display:block;max-width:100%;}
@@ -234,6 +216,27 @@
     content:"";position:absolute;left:0;right:0;bottom:0;height:30vh;z-index:3;
     pointer-events:none;
     background:linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,.65) 55%, #ffffff 100%);
+  }
+  /* botón sorpresa: minúsculo y discreto, colocado al azar sobre la portada */
+  .hero-prize{
+    position:absolute;z-index:6;top:50%;left:50%;
+    width:16px;height:16px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:10px;line-height:1;text-decoration:none;
+    color:rgba(255,255,255,.4);background:rgba(255,255,255,.14);
+    transition:transform .2s ease,background .2s ease,color .2s ease;
+  }
+  .hero-prize:hover{transform:scale(1.7);background:rgba(255,255,255,.92);color:#0c2c49;}
+  /* móvil: la ilustración es apaisada; en vertical, forzarla a pantalla completa
+     la ampliaba muchísimo y salía descuadrada. Se muestra en una ventana con
+     proporción fija y recorte centrado. */
+  @media(max-width:760px){
+    .hero-stack,
+    .hero-stack--single{min-height:0;padding:0;gap:0;}
+    .hero-stack--single .hero-photo{position:relative;inset:auto;aspect-ratio:4/5;width:100%;}
+    .hero-stack--single .hero-photo img{position:absolute;inset:0;}
+    .hero-photo .hero-photo-main{object-position:center center;}
+    .hero-stack--single .hero-photo::after{height:24%;}
   }
 
 
@@ -606,5 +609,62 @@
   .social-row a:hover{background:var(--accent-hover);}
   .social-row svg{width:17px;height:17px;}
   .footer-copyright{margin:1em 0 0;font-size:13px;color:var(--muted);}
+
+  /* ---------- página sorpresa "ha ganado una lámina" ---------- */
+  body.prize-page{
+    min-height:100vh;display:flex;flex-direction:column;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(46,196,182,.28), transparent 42%),
+      radial-gradient(circle at 88% 12%, rgba(255,122,89,.26), transparent 40%),
+      radial-gradient(circle at 78% 88%, rgba(255,199,64,.30), transparent 44%),
+      radial-gradient(circle at 20% 82%, rgba(120,115,245,.22), transparent 46%),
+      #fffdf7;
+  }
+  body.prize-page .site-header{position:static;background:transparent;box-shadow:none;}
+  body.prize-page .header-bottom-inner{justify-content:center;padding:1.6em 3.5em;}
+  .prize{
+    flex:1;display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:3em 0 5em;
+  }
+  .prize .wrap{
+    max-width:640px;background:rgba(255,255,255,.72);
+    border:1px solid rgba(255,255,255,.9);border-radius:22px;
+    padding:3em 2.6em;backdrop-filter:blur(4px);
+    box-shadow:0 24px 60px rgba(31,58,92,.16);
+  }
+  .prize-confetti{font-size:2em;letter-spacing:.15em;margin:0 0 .5em;}
+  .prize-kicker{
+    font-family:var(--body-font);text-transform:uppercase;letter-spacing:.22em;
+    font-size:.82em;font-weight:700;margin:0 0 1em;
+    background:linear-gradient(90deg,#2ec4b6,#7873f5 45%,#ff7a59 80%,#ffb400);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .prize h1{
+    font-size:2.9em;margin:0 0 .35em;line-height:1.14;
+    color:#1f3a5c;
+  }
+  .prize-joke{font-family:'Cormorant Garamond',serif;font-size:1.75em;line-height:1.5;margin:0 0 .3em;color:var(--ink);}
+  .prize-joke strong{
+    background:linear-gradient(120deg,#ff7a59,#ffb400);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    font-weight:700;
+  }
+  .prize-sub{color:#5a6b82;margin:0 0 2em;}
+  .prize-cta{
+    display:inline-block;text-decoration:none;
+    font-family:var(--body-font);font-weight:700;text-transform:uppercase;letter-spacing:.12em;
+    color:#fff;background:linear-gradient(120deg,#2ec4b6,#7873f5);
+    border:0;border-radius:999px;
+    padding:1.05em 2.8em;box-shadow:0 12px 26px rgba(120,115,245,.35);
+    transition:transform .2s ease,box-shadow .2s ease,filter .2s ease;
+  }
+  .prize-cta:hover{transform:translateY(-3px);box-shadow:0 18px 34px rgba(120,115,245,.45);filter:saturate(1.1);}
+  .prize-back{display:inline-block;margin-top:1.8em;color:#7b8aa0;font-size:.95em;}
+  .prize-back:hover{color:#1f3a5c;}
+  @media(max-width:760px){
+    .prize .wrap{padding:2.4em 1.5em;}
+    .prize h1{font-size:2.05em;}
+    .prize-joke{font-size:1.4em;}
+  }
 
   :focus-visible{outline:2px dotted var(--ink);outline-offset:2px;}

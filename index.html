@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=Dancing+Script:wght@600;700&family=Homemade+Apple&family=Rouge+Script&family=Sancreek&family=Yuji+Boku&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body class="home-page menu-collapsed">
+<body class="home-page">
 
   <!-- CABECERA -->
   <header class="site-header">
@@ -57,6 +57,7 @@
     <div class="hero-photo">
       <img class="hero-photo-main" id="heroPhotoMain" src="ilustraciones/fondo 4.png" alt="Ilustración de fondo">
     </div>
+    <a class="hero-prize" id="heroPrize" href="felicidades.html" aria-label="Sorpresa">·</a>
   </div>
 
   <!-- SOBRE MÍ (la página completa, tal cual, con un margen blanco alrededor) -->
@@ -145,10 +146,14 @@
     menuToggle.setAttribute('aria-expanded', isOpen);
   });
 
-  document.getElementById('logoToggle').addEventListener('click', (e) => {
-    e.preventDefault();
-    document.body.classList.toggle('menu-collapsed');
-  });
+  // el logo simplemente recarga la portada (su href apunta a index.html)
+
+  // botón sorpresa: aparece en un punto al azar de la portada en cada carga
+  const heroPrize = document.getElementById('heroPrize');
+  if (heroPrize) {
+    heroPrize.style.top = (14 + Math.random() * 64).toFixed(1) + '%';
+    heroPrize.style.left = (6 + Math.random() * 86).toFixed(1) + '%';
+  }
 
   const footerAvatar = document.getElementById('footerAvatar');
   const avatarBackdrop = document.getElementById('avatarBackdrop');
