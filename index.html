@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>yolanda_arte</title>
+<title>arte-yolanda</title>
 <meta name="description" content="Ilustrador/a científico/a y de la naturaleza. [Breve descripción de tu trabajo y a quién ayudas].">
 <link rel="icon" type="image/png" href="ilustraciones/Página web/Logo Yolanda/logo sin fondo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=Dancing+Script:wght@600;700&family=Homemade+Apple&family=Rouge+Script&family=Sancreek&family=Yuji+Boku&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body class="home-page">
+<body class="home-page menu-collapsed">
 
   <!-- CABECERA -->
   <header class="site-header">
@@ -27,7 +27,7 @@
       <nav class="main-nav header-nav" id="mainNav">
         <ul>
           <li><a href="colecciones.html">Colecciones</a></li>
-          <li><a class="nav-cta" href="sobre-mi.html">Sobre mí</a></li>
+          <li><a class="nav-cta" href="#sobre-mi">Sobre mí</a></li>
           <li><a href="#eventos">Eventos</a></li>
           <li><a href="tienda.html">Tienda</a></li>
         </ul>
@@ -59,6 +59,24 @@
     </div>
   </div>
 
+  <!-- SOBRE MÍ (la página completa, tal cual, con un margen blanco alrededor) -->
+  <div id="sobre-mi" class="index-sobremi-wrap">
+    <main class="about-split about-split--embed">
+      <div class="about-content">
+        <div class="about-header-row">
+          <div class="about-intro">
+            <h1>¡Hola!</h1>
+            <p class="about-lead">Soy Yolanda Ferrón, ilustradora científica y de la naturaleza, apasionada de retratar el mundo marino y terrestre con rigor y mirada personal.</p>
+            <a class="about-cta" href="sobre-mi.html">Conóceme un poco más</a>
+          </div>
+          <div class="about-portrait">
+            <img id="aboutPortraitImg" src="ilustraciones/Página web/WhatsApp Image 2026-03-02 at 00.36.45.jpg" alt="Retrato de Yolanda Ferrón">
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
   <!-- MIS TRABAJOS: carrusel con ventanas circulares -->
   <section id="obras" class="index-section index-works">
     <div class="wrap">
@@ -76,6 +94,26 @@
           <div class="works-item"><img src="ilustraciones/Página web/animales NO marinos/Iguana_Yolanda Ferrón.jpg" alt="Iguana"></div>
         </div>
         <button class="works-arrow works-arrow--next" id="worksNext" aria-label="Siguiente">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCIONES: cursos y eventos -->
+  <section class="index-section index-actions">
+    <div class="wrap">
+      <div class="action-buttons">
+        <a class="action-card" href="#">
+          <span class="action-card-inner">
+            <span class="action-card-title">Cursos y talleres</span>
+            <span class="action-card-more">Ver más</span>
+          </span>
+        </a>
+        <a class="action-card" href="#eventos">
+          <span class="action-card-inner">
+            <span class="action-card-title">Eventos</span>
+            <span class="action-card-more">Ver más</span>
+          </span>
+        </a>
       </div>
     </div>
   </section>
@@ -111,6 +149,11 @@
     e.preventDefault();
     document.body.classList.toggle('menu-collapsed');
   });
+
+  const portraitImages = ['ilustraciones/Yolandapagina.jpeg'];
+  const portraitIndex = Number(sessionStorage.getItem('aboutPortraitIndex') || 0) % portraitImages.length;
+  sessionStorage.setItem('aboutPortraitIndex', (portraitIndex + 1) % portraitImages.length);
+  document.getElementById('aboutPortraitImg').src = portraitImages[portraitIndex];
 
   const footerAvatar = document.getElementById('footerAvatar');
   const avatarBackdrop = document.getElementById('avatarBackdrop');
