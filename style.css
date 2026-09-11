@@ -227,6 +227,64 @@
     transition:transform .2s ease,background .2s ease,color .2s ease;
   }
   .hero-prize:hover{transform:scale(1.7);background:rgba(255,255,255,.92);color:#0c2c49;}
+
+  /* ballena de la portada: apenas se ve; al descubrirla se muestra y luego nada fuera de la pantalla */
+  .hero-giba{
+    position:absolute;z-index:5;left:13%;bottom:11%;
+    width:24%;max-width:300px;min-width:130px;height:auto;
+    cursor:pointer;pointer-events:auto;
+    filter:drop-shadow(0 14px 22px rgba(0,0,0,.22));
+    opacity:.15;transform:translate(0,0);
+    animation:heroGibaFloat 7s ease-in-out infinite;
+    transition:opacity 1.6s ease;
+  }
+  /* huida en dos tirones: arrancada rápida, pausa breve y segunda arrancada, con estela que se apaga */
+  .hero-giba.is-leaving{
+    opacity:1;pointer-events:none;
+    animation:heroGibaLeave 2.6s forwards;
+  }
+  @keyframes heroGibaFloat{
+    0%,100%{transform:translate(0,0);}
+    50%{transform:translate(0,-5px);}
+  }
+  @keyframes heroGibaLeave{
+    0%{transform:translate(0,0) rotate(0deg);opacity:1;animation-timing-function:cubic-bezier(.15,.8,.2,1);}
+    30%{transform:translate(-170%,-12%) rotate(-6deg);opacity:1;animation-timing-function:cubic-bezier(.4,0,.6,1);}
+    48%{transform:translate(-183%,-9%) rotate(-5deg);opacity:1;animation-timing-function:cubic-bezier(.15,.8,.2,1);}
+    80%{transform:translate(-440%,7%) rotate(-11deg);opacity:.45;animation-timing-function:ease-in;}
+    100%{transform:translate(-650%,12%) rotate(-15deg);opacity:0;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .hero-giba{animation:none;}
+    .hero-giba.is-leaving{animation:none;opacity:0;}
+  }
+  @media(max-width:760px){
+    .hero-giba{width:34%;max-width:170px;min-width:90px;left:9%;bottom:6%;}
+  }
+
+  /* humo negro que queda flotando en el sitio cuando la ballena se va */
+  .hero-giba-smoke{
+    position:absolute;z-index:4;left:13%;bottom:11%;
+    width:24%;max-width:300px;min-width:130px;aspect-ratio:1/1;
+    border-radius:50%;pointer-events:none;
+    background:radial-gradient(circle, rgba(0,0,0,.8) 0%, rgba(0,0,0,.5) 45%, rgba(0,0,0,0) 72%);
+    filter:blur(6px);opacity:0;
+  }
+  .hero-giba-smoke.is-puffing{
+    animation:heroGibaSmokePuff 3s ease-out forwards;
+  }
+  @keyframes heroGibaSmokePuff{
+    0%{opacity:0;transform:scale(.35);}
+    22%{opacity:.9;transform:scale(1);}
+    100%{opacity:0;transform:scale(2.1);}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .hero-giba-smoke.is-puffing{animation:none;}
+  }
+  @media(max-width:760px){
+    .hero-giba-smoke{width:34%;max-width:170px;min-width:90px;left:9%;bottom:6%;}
+  }
+
   /* móvil: la ilustración es apaisada; en vertical, forzarla a pantalla completa
      la ampliaba muchísimo y salía descuadrada. Se muestra en una ventana con
      proporción fija y recorte centrado. */

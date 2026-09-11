@@ -50,6 +50,8 @@
       <img class="hero-photo-main" id="heroPhotoMain" src="ilustraciones/fondo 4.png" alt="Ilustración de fondo">
     </div>
     <a class="hero-prize" id="heroPrize" href="felicidades.html" aria-label="Sorpresa">·</a>
+    <img class="hero-giba" id="heroGiba" src="ilustraciones/Especies sin fondo/Giba.png" alt="Ballena jorobada" role="button" tabindex="0" aria-label="Ballena jorobada, toca para descubrirla">
+    <span class="hero-giba-smoke" id="heroGibaSmoke" aria-hidden="true"></span>
   </div>
 
   <!-- SOBRE MÍ (la página completa, tal cual, con un margen blanco alrededor) -->
@@ -154,6 +156,24 @@
   if (heroPrize) {
     heroPrize.style.top = (14 + Math.random() * 64).toFixed(1) + '%';
     heroPrize.style.left = (6 + Math.random() * 86).toFixed(1) + '%';
+  }
+
+  // ballena de la portada: casi invisible; al descubrirla (click) se muestra un instante y se va nadando fuera de la pantalla
+  const heroGiba = document.getElementById('heroGiba');
+  const heroGibaSmoke = document.getElementById('heroGibaSmoke');
+  if (heroGiba) {
+    const revealGiba = () => {
+      if (heroGiba.classList.contains('is-leaving')) return;
+      heroGiba.style.opacity = '1';
+      setTimeout(() => {
+        heroGiba.classList.add('is-leaving');
+        if (heroGibaSmoke) heroGibaSmoke.classList.add('is-puffing');
+      }, 1400);
+    };
+    heroGiba.addEventListener('click', revealGiba);
+    heroGiba.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); revealGiba(); }
+    });
   }
 
   const footerAvatar = document.getElementById('footerAvatar');
